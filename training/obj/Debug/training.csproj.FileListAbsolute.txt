@@ -24,3 +24,5 @@ E:\school\develop\training\training\obj\Debug\training.Properties.Resources.reso
 E:\school\develop\training\training\obj\Debug\training.csproj.GenerateResource.Cache
 E:\school\develop\training\training\obj\Debug\training.Admin.AddIstForm.resources
 E:\school\develop\training\training\obj\Debug\training.Admin.AddCourseForm.resources
+E:\school\develop\training\training\obj\Debug\training.instructor.InstructorForm.resources
+E:\school\develop\training\training\obj\Debug\training.trainee.TraineeForm.resources
