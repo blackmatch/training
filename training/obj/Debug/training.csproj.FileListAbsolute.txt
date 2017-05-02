@@ -26,3 +26,5 @@ E:\school\develop\training\training\obj\Debug\training.Admin.AddIstForm.resource
 E:\school\develop\training\training\obj\Debug\training.Admin.AddCourseForm.resources
 E:\school\develop\training\training\obj\Debug\training.instructor.InstructorForm.resources
 E:\school\develop\training\training\obj\Debug\training.trainee.TraineeForm.resources
+E:\school\develop\training\training\obj\Debug\training.Admin.EditTraineeForm.resources
+E:\school\develop\training\training\obj\Debug\training.Admin.EditIstForm.resources

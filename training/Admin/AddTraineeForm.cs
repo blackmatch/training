@@ -10,6 +10,7 @@ using System.Windows.Forms;
 
 //custom
 using System.Data.SqlClient;
+using training.model;
 
 namespace training.Admin
 {
@@ -24,7 +25,7 @@ namespace training.Admin
         {
             this.Dispose();
         }
-
+        
         private void okBtn_Click(object sender, EventArgs e)
         {
             string name = nameTB.Text;
