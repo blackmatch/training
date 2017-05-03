@@ -44,9 +44,9 @@
             this.addIstBtn = new System.Windows.Forms.Button();
             this.istDgView = new System.Windows.Forms.DataGridView();
             this.courseContainer = new System.Windows.Forms.TabPage();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.refreshCourseBtn = new System.Windows.Forms.Button();
+            this.deleteCourseBtn = new System.Windows.Forms.Button();
+            this.editCourseBtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
             this.courseDgView = new System.Windows.Forms.DataGridView();
             this.courseTab.SuspendLayout();
@@ -229,9 +229,9 @@
             // 
             // courseContainer
             // 
-            this.courseContainer.Controls.Add(this.button7);
-            this.courseContainer.Controls.Add(this.button6);
-            this.courseContainer.Controls.Add(this.button5);
+            this.courseContainer.Controls.Add(this.refreshCourseBtn);
+            this.courseContainer.Controls.Add(this.deleteCourseBtn);
+            this.courseContainer.Controls.Add(this.editCourseBtn);
             this.courseContainer.Controls.Add(this.addCourseBtn);
             this.courseContainer.Controls.Add(this.courseDgView);
             this.courseContainer.Location = new System.Drawing.Point(4, 22);
@@ -243,33 +243,36 @@
             this.courseContainer.UseVisualStyleBackColor = true;
             this.courseContainer.Enter += new System.EventHandler(this.courseContainer_Enter);
             // 
-            // button7
+            // refreshCourseBtn
             // 
-            this.button7.Location = new System.Drawing.Point(333, 29);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(75, 23);
-            this.button7.TabIndex = 4;
-            this.button7.Text = "刷新";
-            this.button7.UseVisualStyleBackColor = true;
+            this.refreshCourseBtn.Location = new System.Drawing.Point(333, 29);
+            this.refreshCourseBtn.Name = "refreshCourseBtn";
+            this.refreshCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshCourseBtn.TabIndex = 4;
+            this.refreshCourseBtn.Text = "刷新";
+            this.refreshCourseBtn.UseVisualStyleBackColor = true;
+            this.refreshCourseBtn.Click += new System.EventHandler(this.refreshCourseBtn_Click);
             // 
-            // button6
+            // deleteCourseBtn
             // 
-            this.button6.ForeColor = System.Drawing.Color.Red;
-            this.button6.Location = new System.Drawing.Point(226, 29);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 3;
-            this.button6.Text = "删除";
-            this.button6.UseVisualStyleBackColor = true;
+            this.deleteCourseBtn.ForeColor = System.Drawing.Color.Red;
+            this.deleteCourseBtn.Location = new System.Drawing.Point(226, 29);
+            this.deleteCourseBtn.Name = "deleteCourseBtn";
+            this.deleteCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteCourseBtn.TabIndex = 3;
+            this.deleteCourseBtn.Text = "删除";
+            this.deleteCourseBtn.UseVisualStyleBackColor = true;
+            this.deleteCourseBtn.Click += new System.EventHandler(this.deleteCourseBtn_Click);
             // 
-            // button5
+            // editCourseBtn
             // 
-            this.button5.Location = new System.Drawing.Point(119, 29);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 23);
-            this.button5.TabIndex = 2;
-            this.button5.Text = "修改";
-            this.button5.UseVisualStyleBackColor = true;
+            this.editCourseBtn.Location = new System.Drawing.Point(119, 29);
+            this.editCourseBtn.Name = "editCourseBtn";
+            this.editCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.editCourseBtn.TabIndex = 2;
+            this.editCourseBtn.Text = "修改";
+            this.editCourseBtn.UseVisualStyleBackColor = true;
+            this.editCourseBtn.Click += new System.EventHandler(this.editCourseBtn_Click);
             // 
             // addCourseBtn
             // 
@@ -331,8 +334,8 @@
         private System.Windows.Forms.Button deleteIstBtn;
         private System.Windows.Forms.Button resetIstPwdBtn;
         private System.Windows.Forms.Button editIstBtn;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button refreshCourseBtn;
+        private System.Windows.Forms.Button deleteCourseBtn;
+        private System.Windows.Forms.Button editCourseBtn;
     }
 }

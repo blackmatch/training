@@ -10,26 +10,39 @@ using System.Windows.Forms;
 
 //custom
 using System.Data.SqlClient;
+using training.model;
 
 namespace training.Admin
 {
-    public partial class AddCourseForm : Form
+    public partial class EditCourseForm : Form
     {
-        private DataSet ists;
-        public AddCourseForm()
+        public EditCourseForm()
         {
             InitializeComponent();
+        }
+
+        private string courseId;
+        private DataSet ists;
+
+        public EditCourseForm(Course courseInfo)
+        {
+            InitializeComponent();
+
+            nameTB.Text = courseInfo.name;
+            beginDatePicker.Text = courseInfo.beginDate;
+            endDatePicker.Text = courseInfo.endDate;
+            addrTB.Text = courseInfo.addr;
+            remarkRichTB.Text = courseInfo.remark;
+
+            this.courseId = courseInfo.id;
+
             DataSet ists = getAllIsts();
             this.ists = ists;
-            for (int i = 0; i < ists.Tables["instructors"].Rows.Count; i++ )
+            int selectedIdx = 0;
+            for (int i = 0; i < ists.Tables["instructors"].Rows.Count; i++)
             {
                 istComBo.Items.Add(ists.Tables["instructors"].Rows[i]["姓名"] + " （" + ists.Tables["instructors"].Rows[i]["教员编号"] + "）");
             }
-        }
-
-        private void cancelBtn_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
         }
 
         private DataSet getAllIsts()
@@ -46,11 +59,16 @@ namespace training.Admin
             if (rowsCount > 0)
             {
                 return ds;
-            } 
-            else 
+            }
+            else
             {
                 return new DataSet();
             }
+        }
+
+        private void cancelBtn_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -62,33 +80,33 @@ namespace training.Admin
             string remark = remarkRichTB.Text;
             int idx = istComBo.SelectedIndex;
             string idStr = this.ists.Tables["instructors"].Rows[idx]["id"].ToString();
-            if (name.Length > 0)
-            {
-                //插入数据
-                string sql = "insert into courses(name,ist_id,beginDate,endDate,addr,remark) values('" + name
-                    + "'," + idStr +",'" + beginDate + "','" + endDate + "','" + address + "','" + remark + "')";
-                string conStr = "server=localhost;database=training;integrated security=SSPI";
-                SqlConnection sqlCon = new SqlConnection(conStr);
-                SqlCommand sqlCmd = new SqlCommand(sql, sqlCon);
 
-                try
+            string conStr = "server=localhost;database=training;integrated security=SSPI";
+            SqlConnection con = new SqlConnection(conStr);
+            con.Open();
+            string sql = "update courses set name='" + name + "',beginDate='" + beginDate + "',endDate='"
+                + endDate + "',addr='" + address + "',remark='" + remark + "' where id=" + courseId;
+            SqlCommand sqlCmd = new SqlCommand(sql, con);
+            try
+            {
+                int rows = sqlCmd.ExecuteNonQuery();
+                if (rows > 0)
                 {
-                    sqlCon.Open();
-                    sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("新增课程成功！");
-                    sqlCon.Close();
+                    MessageBox.Show("修改课程信息成功！");
                     this.Dispose();
                 }
-                catch (Exception ex)
+                else
                 {
-                    sqlCon.Close();
-                    MessageBox.Show("新增课程失败！" + sql);
-                    Console.WriteLine("{0} Exception caught.", ex);
+                    MessageBox.Show("修改课程信息失败！");
                 }
+
+                con.Close();
             }
-            else
+            catch (Exception ex)
             {
-                MessageBox.Show("请填写完整的学员信息");
+                MessageBox.Show("修改课程信息失败！");
+                Console.WriteLine("{0} Exception caught.", ex);
+                con.Close();
             }
         }
     }

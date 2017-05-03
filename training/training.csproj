@@ -68,6 +68,12 @@
     <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\EditCourseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\EditCourseForm.Designer.cs">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditIstForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +104,7 @@
     <Compile Include="LoginForms\AdminLoginForm.Designer.cs">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="model\Course.cs" />
     <Compile Include="model\Instructor.cs" />
     <Compile Include="model\Person.cs" />
     <Compile Include="model\Trainee.cs" />
@@ -121,6 +128,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\EditCourseForm.resx">
+      <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Admin\EditIstForm.resx">
       <DependentUpon>EditIstForm.cs</DependentUpon>

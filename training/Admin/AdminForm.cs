@@ -111,12 +111,15 @@ namespace training.Admin
             refreshIstData();
         }
 
+        // 课程管理-新增
         private void addCourseBtn_Click(object sender, EventArgs e)
         {
             AddCourseForm courseForm = new AddCourseForm();
             courseForm.ShowDialog();
+            refreshCourseData();
         }
 
+        // 学员管理-修改信息
         private void editTraineeInfoBtn_Click(object sender, EventArgs e)
         {
             int idx = traineeDgView.CurrentRow.Index;
@@ -325,6 +328,66 @@ namespace training.Admin
 
         // 选择课程模块
         private void courseContainer_Enter(object sender, EventArgs e)
+        {
+            refreshCourseData();
+        }
+
+        // 课程管理-修改
+        private void editCourseBtn_Click(object sender, EventArgs e)
+        {
+            int idx = courseDgView.CurrentRow.Index;
+            string idStr = courseDgView.Rows[idx].Cells["id"].Value.ToString();
+            Course courseInfo = new Course();
+            courseInfo.id = idStr;
+            courseInfo.name = courseDgView.Rows[idx].Cells["课程名称"].Value.ToString();
+            courseInfo.beginDate = courseDgView.Rows[idx].Cells["开始日期"].Value.ToString();
+            courseInfo.endDate = courseDgView.Rows[idx].Cells["结束日期"].Value.ToString();
+            courseInfo.addr = courseDgView.Rows[idx].Cells["培训地址"].Value.ToString();
+            courseInfo.remark = courseDgView.Rows[idx].Cells["备注"].Value.ToString();
+            EditCourseForm editFm = new EditCourseForm(courseInfo);
+            editFm.ShowDialog();
+            refreshCourseData();
+        }
+
+        private void deleteCourseBtn_Click(object sender, EventArgs e)
+        {
+            int idx = courseDgView.CurrentRow.Index;
+            string idStr = courseDgView.Rows[idx].Cells["id"].Value.ToString();
+            DialogResult dr = MessageBox.Show("确认删除该课程吗？", "提示", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                // 删除课程
+                string conStr = "server=localhost;database=training;integrated security=SSPI";
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                string sql = "delete from courses where id=" + idStr;
+                SqlCommand sqlCmd = new SqlCommand(sql, con);
+                try
+                {
+                    int rows = sqlCmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("删除课程成功！");
+                        // 刷新课程数据
+                        refreshCourseData();
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除课程失败！");
+                    }
+
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("删除课程失败！");
+                    Console.WriteLine("{0} Exception caught.", ex);
+                    con.Close();
+                }
+            }
+        }
+
+        private void refreshCourseBtn_Click(object sender, EventArgs e)
         {
             refreshCourseData();
         }
