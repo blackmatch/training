@@ -68,6 +68,18 @@
     <Compile Include="Admin\AdminForm.Designer.cs">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Admin\CourseAddTraineeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CourseAddTraineeForm.Designer.cs">
+      <DependentUpon>CourseAddTraineeForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Admin\CourseDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin\CourseDetailForm.Designer.cs">
+      <DependentUpon>CourseDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Admin\EditCourseForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -98,6 +110,18 @@
     <Compile Include="instructor\InstructorForm.Designer.cs">
       <DependentUpon>InstructorForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="instructor\IstCourseDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="instructor\IstCourseDetailForm.Designer.cs">
+      <DependentUpon>IstCourseDetailForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="instructor\ScoreTraineeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="instructor\ScoreTraineeForm.Designer.cs">
+      <DependentUpon>ScoreTraineeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="LoginForms\AdminLoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +135,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tool\Tool.cs" />
+    <Compile Include="trainee\TraineeCourseDetailForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trainee\TraineeCourseDetailForm.Designer.cs">
+      <DependentUpon>TraineeCourseDetailForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="trainee\TraineeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +159,12 @@
     <EmbeddedResource Include="Admin\AdminForm.resx">
       <DependentUpon>AdminForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CourseAddTraineeForm.resx">
+      <DependentUpon>CourseAddTraineeForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin\CourseDetailForm.resx">
+      <DependentUpon>CourseDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Admin\EditCourseForm.resx">
       <DependentUpon>EditCourseForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,6 +180,12 @@
     <EmbeddedResource Include="instructor\InstructorForm.resx">
       <DependentUpon>InstructorForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="instructor\IstCourseDetailForm.resx">
+      <DependentUpon>IstCourseDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="instructor\ScoreTraineeForm.resx">
+      <DependentUpon>ScoreTraineeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="LoginForms\AdminLoginForm.resx">
       <DependentUpon>AdminLoginForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +198,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="trainee\TraineeCourseDetailForm.resx">
+      <DependentUpon>TraineeCourseDetailForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="trainee\TraineeForm.resx">
       <DependentUpon>TraineeForm.cs</DependentUpon>
     </EmbeddedResource>

@@ -8,22 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-using training.model;
-
 namespace training.trainee
 {
-    public partial class TraineeForm : Form
+    public partial class TraineeCourseDetailForm : Form
     {
-        public TraineeForm()
+        public TraineeCourseDetailForm()
         {
             InitializeComponent();
-        }
-
-        private Trainee traineeInfo;
-        public TraineeForm(Trainee trainee)
-        {
-            InitializeComponent();
-            this.traineeInfo = trainee;
         }
     }
 }

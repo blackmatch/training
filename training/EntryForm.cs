@@ -15,6 +15,7 @@ using training.Admin;
 using training.instructor;
 using training.trainee;
 using training.tool;
+using training.model;
 
 namespace training
 {
@@ -99,10 +100,10 @@ namespace training
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "instructors");
                 int rows = ds.Tables["instructors"].Rows.Count;
-                //userNameTb.Text = ds.Tables["admins"].Rows[0]["userName"].ToString();
+                string istId = ds.Tables["instructors"].Rows[0]["id"].ToString();
                 if (rows > 0)
                 {
-                    InstructorForm istFm = new InstructorForm();
+                    InstructorForm istFm = new InstructorForm(istId);
                     istFm.Show();
                     this.Hide();
                 }
@@ -135,10 +136,11 @@ namespace training
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "trainees");
                 int rows = ds.Tables["trainees"].Rows.Count;
-                //userNameTb.Text = ds.Tables["admins"].Rows[0]["userName"].ToString();
+            
                 if (rows > 0)
                 {
-                    TraineeForm traineeFm = new TraineeForm();
+                    Trainee trainee = new Trainee(ds);
+                    TraineeForm traineeFm = new TraineeForm(trainee);
                     traineeFm.Show();
                     this.Hide();
                 }

@@ -29,3 +29,8 @@ E:\school\develop\training\training\obj\Debug\training.trainee.TraineeForm.resou
 E:\school\develop\training\training\obj\Debug\training.Admin.EditTraineeForm.resources
 E:\school\develop\training\training\obj\Debug\training.Admin.EditIstForm.resources
 E:\school\develop\training\training\obj\Debug\training.Admin.EditCourseForm.resources
+E:\school\develop\training\training\obj\Debug\training.Admin.CourseDetailForm.resources
+E:\school\develop\training\training\obj\Debug\training.Admin.CourseAddTraineeForm.resources
+E:\school\develop\training\training\obj\Debug\training.instructor.IstCourseDetailForm.resources
+E:\school\develop\training\training\obj\Debug\training.instructor.ScoreTraineeForm.resources
+E:\school\develop\training\training\obj\Debug\training.trainee.TraineeCourseDetailForm.resources

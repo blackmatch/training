@@ -20,6 +20,7 @@ namespace training.Admin
         public AdminForm()
         {
             InitializeComponent();
+            commentDgView.AutoGenerateColumns = false;
         }
 
         //学员管理-新增
@@ -137,6 +138,7 @@ namespace training.Admin
             refreshTraineeData();
         }
 
+        // 学员管理 - 重置密码
         private void resetTraineePwd_Click(object sender, EventArgs e)
         {
             int idx = traineeDgView.CurrentRow.Index;
@@ -175,6 +177,7 @@ namespace training.Admin
             }
         }
 
+        // 学员管理 - 删除
         private void deleteTraineeBtn_Click(object sender, EventArgs e)
         {
             //删除学员
@@ -349,6 +352,7 @@ namespace training.Admin
             refreshCourseData();
         }
 
+        // 课程管理 - 删除
         private void deleteCourseBtn_Click(object sender, EventArgs e)
         {
             int idx = courseDgView.CurrentRow.Index;
@@ -387,9 +391,101 @@ namespace training.Admin
             }
         }
 
+        // 课程管理 - 刷新
         private void refreshCourseBtn_Click(object sender, EventArgs e)
         {
             refreshCourseData();
+        }
+
+        // 课程管理 - 查看详情
+        private void courseDetailBtn_Click(object sender, EventArgs e)
+        {
+            int idx = courseDgView.CurrentRow.Index;
+            string idStr = courseDgView.Rows[idx].Cells["id"].Value.ToString();
+            CourseDetailForm cDetailFm = new CourseDetailForm(idStr);
+            cDetailFm.ShowDialog();
+        }
+
+        // 切换到评论管理
+        private void commentPage_Enter(object sender, EventArgs e)
+        {
+            string conStr = "server=localhost;database=training;integrated security=SSPI";
+            SqlConnection con = new SqlConnection(conStr);
+            con.Open();
+            string sql = "select id,name from courses";
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "courses");
+            courseComboBox.DisplayMember = "name";
+            courseComboBox.ValueMember = "id";
+            courseComboBox.DataSource = ds.Tables["courses"];
+            con.Close();
+
+            // 获取评论信息
+            string cId = courseComboBox.SelectedValue.ToString();
+            getCourseCommentsById(cId);
+        }
+
+        // 根据id获取课程评论
+        private void getCourseCommentsById(string cId)
+        {
+            string conStr = "server=localhost;database=training;integrated security=SSPI";
+            SqlConnection con = new SqlConnection(conStr);
+            con.Open();
+            string sql = "select id,content,createdAt from comments where course_id=" + cId;
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "comments");
+            commentDgView.DataSource = ds.Tables["comments"];
+            con.Close();
+        }
+
+        // 评论管理 - 删除
+        private void deleteCommentBtn_Click(object sender, EventArgs e)
+        {
+            int idx = commentDgView.CurrentRow.Index;
+            string idStr = commentDgView.Rows[idx].Cells["id"].Value.ToString();
+            DialogResult dr = MessageBox.Show("确认删除该评论吗？", "提示", MessageBoxButtons.OKCancel);
+            if (dr == DialogResult.OK)
+            {
+                // 删除评论
+                string conStr = "server=localhost;database=training;integrated security=SSPI";
+                SqlConnection con = new SqlConnection(conStr);
+                con.Open();
+                string sql = "delete from comments where id=" + idStr;
+                SqlCommand sqlCmd = new SqlCommand(sql, con);
+                try
+                {
+                    int rows = sqlCmd.ExecuteNonQuery();
+                    if (rows > 0)
+                    {
+                        MessageBox.Show("删除评论成功！");
+                        // 获取评论信息
+                        string cId = courseComboBox.SelectedValue.ToString();
+                        getCourseCommentsById(cId);
+                    }
+                    else
+                    {
+                        MessageBox.Show("删除评论失败！");
+                    }
+
+                    con.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("删除评论失败！");
+                    Console.WriteLine("{0} Exception caught.", ex);
+                    con.Close();
+                }
+            }
+        }
+
+        // 评论管理 - 刷新
+        private void refreshCommentBtn_Click(object sender, EventArgs e)
+        {
+            // 获取评论信息
+            string cId = courseComboBox.SelectedValue.ToString();
+            getCourseCommentsById(cId);
         }
     }
 }
