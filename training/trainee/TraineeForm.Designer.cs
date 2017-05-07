@@ -30,23 +30,29 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.refreshCourseBtn = new System.Windows.Forms.Button();
+            this.courseDetailBtn = new System.Windows.Forms.Button();
+            this.courseDgView = new System.Windows.Forms.DataGridView();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.nameLabel = new System.Windows.Forms.Label();
-            this.jobNumberLabel = new System.Windows.Forms.Label();
-            this.genderLabel = new System.Windows.Forms.Label();
-            this.ageLabel = new System.Windows.Forms.Label();
-            this.editInfoBtn = new System.Windows.Forms.Button();
             this.updatePwdBtn = new System.Windows.Forms.Button();
+            this.editInfoBtn = new System.Windows.Forms.Button();
+            this.ageLabel = new System.Windows.Forms.Label();
+            this.genderLabel = new System.Windows.Forms.Label();
+            this.jobNumberLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.istName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDgView)).BeginInit();
             this.tabPage2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,9 +68,9 @@
             // 
             // tabPage1
             // 
-            this.tabPage1.Controls.Add(this.button3);
-            this.tabPage1.Controls.Add(this.button1);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.refreshCourseBtn);
+            this.tabPage1.Controls.Add(this.courseDetailBtn);
+            this.tabPage1.Controls.Add(this.courseDgView);
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
@@ -73,32 +79,40 @@
             this.tabPage1.Text = "我的课程";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // refreshCourseBtn
             // 
-            this.button3.Location = new System.Drawing.Point(110, 26);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "刷新";
-            this.button3.UseVisualStyleBackColor = true;
+            this.refreshCourseBtn.Location = new System.Drawing.Point(110, 26);
+            this.refreshCourseBtn.Name = "refreshCourseBtn";
+            this.refreshCourseBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshCourseBtn.TabIndex = 3;
+            this.refreshCourseBtn.Text = "刷新";
+            this.refreshCourseBtn.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // courseDetailBtn
             // 
-            this.button1.Location = new System.Drawing.Point(6, 26);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "查看详情";
-            this.button1.UseVisualStyleBackColor = true;
+            this.courseDetailBtn.Location = new System.Drawing.Point(6, 26);
+            this.courseDetailBtn.Name = "courseDetailBtn";
+            this.courseDetailBtn.Size = new System.Drawing.Size(75, 23);
+            this.courseDetailBtn.TabIndex = 1;
+            this.courseDetailBtn.Text = "查看详情";
+            this.courseDetailBtn.UseVisualStyleBackColor = true;
+            this.courseDetailBtn.Click += new System.EventHandler(this.courseDetailBtn_Click);
             // 
-            // dataGridView1
+            // courseDgView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, 67);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(618, 210);
-            this.dataGridView1.TabIndex = 0;
+            this.courseDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.courseDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.name,
+            this.istName,
+            this.beginDate,
+            this.endDate,
+            this.addr,
+            this.remark});
+            this.courseDgView.Location = new System.Drawing.Point(6, 67);
+            this.courseDgView.Name = "courseDgView";
+            this.courseDgView.RowTemplate.Height = 23;
+            this.courseDgView.Size = new System.Drawing.Size(618, 210);
+            this.courseDgView.TabIndex = 0;
             // 
             // tabPage2
             // 
@@ -120,68 +134,25 @@
             this.tabPage2.Text = "个人信息";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // label1
+            // updatePwdBtn
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(31, 49);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "姓名：";
+            this.updatePwdBtn.Location = new System.Drawing.Point(193, 253);
+            this.updatePwdBtn.Name = "updatePwdBtn";
+            this.updatePwdBtn.Size = new System.Drawing.Size(75, 23);
+            this.updatePwdBtn.TabIndex = 9;
+            this.updatePwdBtn.Text = "修改密码";
+            this.updatePwdBtn.UseVisualStyleBackColor = true;
+            this.updatePwdBtn.Click += new System.EventHandler(this.updatePwdBtn_Click);
             // 
-            // label2
+            // editInfoBtn
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(31, 90);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(41, 12);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "工号：";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 129);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(41, 12);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "性别：";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(31, 166);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(41, 12);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "年龄：";
-            // 
-            // nameLabel
-            // 
-            this.nameLabel.AutoSize = true;
-            this.nameLabel.Location = new System.Drawing.Point(89, 49);
-            this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(29, 12);
-            this.nameLabel.TabIndex = 4;
-            this.nameLabel.Text = "姓名";
-            // 
-            // jobNumberLabel
-            // 
-            this.jobNumberLabel.AutoSize = true;
-            this.jobNumberLabel.Location = new System.Drawing.Point(89, 90);
-            this.jobNumberLabel.Name = "jobNumberLabel";
-            this.jobNumberLabel.Size = new System.Drawing.Size(29, 12);
-            this.jobNumberLabel.TabIndex = 5;
-            this.jobNumberLabel.Text = "工号";
-            // 
-            // genderLabel
-            // 
-            this.genderLabel.AutoSize = true;
-            this.genderLabel.Location = new System.Drawing.Point(89, 129);
-            this.genderLabel.Name = "genderLabel";
-            this.genderLabel.Size = new System.Drawing.Size(29, 12);
-            this.genderLabel.TabIndex = 6;
-            this.genderLabel.Text = "性别";
+            this.editInfoBtn.Location = new System.Drawing.Point(33, 253);
+            this.editInfoBtn.Name = "editInfoBtn";
+            this.editInfoBtn.Size = new System.Drawing.Size(75, 23);
+            this.editInfoBtn.TabIndex = 8;
+            this.editInfoBtn.Text = "修改信息";
+            this.editInfoBtn.UseVisualStyleBackColor = true;
+            this.editInfoBtn.Click += new System.EventHandler(this.editInfoBtn_Click);
             // 
             // ageLabel
             // 
@@ -192,35 +163,122 @@
             this.ageLabel.TabIndex = 7;
             this.ageLabel.Text = "年龄";
             // 
-            // editInfoBtn
+            // genderLabel
             // 
-            this.editInfoBtn.Location = new System.Drawing.Point(33, 253);
-            this.editInfoBtn.Name = "editInfoBtn";
-            this.editInfoBtn.Size = new System.Drawing.Size(75, 23);
-            this.editInfoBtn.TabIndex = 8;
-            this.editInfoBtn.Text = "修改信息";
-            this.editInfoBtn.UseVisualStyleBackColor = true;
+            this.genderLabel.AutoSize = true;
+            this.genderLabel.Location = new System.Drawing.Point(89, 129);
+            this.genderLabel.Name = "genderLabel";
+            this.genderLabel.Size = new System.Drawing.Size(29, 12);
+            this.genderLabel.TabIndex = 6;
+            this.genderLabel.Text = "性别";
             // 
-            // updatePwdBtn
+            // jobNumberLabel
             // 
-            this.updatePwdBtn.Location = new System.Drawing.Point(193, 253);
-            this.updatePwdBtn.Name = "updatePwdBtn";
-            this.updatePwdBtn.Size = new System.Drawing.Size(75, 23);
-            this.updatePwdBtn.TabIndex = 9;
-            this.updatePwdBtn.Text = "修改密码";
-            this.updatePwdBtn.UseVisualStyleBackColor = true;
+            this.jobNumberLabel.AutoSize = true;
+            this.jobNumberLabel.Location = new System.Drawing.Point(89, 90);
+            this.jobNumberLabel.Name = "jobNumberLabel";
+            this.jobNumberLabel.Size = new System.Drawing.Size(29, 12);
+            this.jobNumberLabel.TabIndex = 5;
+            this.jobNumberLabel.Text = "工号";
+            // 
+            // nameLabel
+            // 
+            this.nameLabel.AutoSize = true;
+            this.nameLabel.Location = new System.Drawing.Point(89, 49);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(29, 12);
+            this.nameLabel.TabIndex = 4;
+            this.nameLabel.Text = "姓名";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(31, 166);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "年龄：";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(31, 129);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(41, 12);
+            this.label3.TabIndex = 2;
+            this.label3.Text = "性别：";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(31, 90);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(41, 12);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "工号：";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(31, 49);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "姓名：";
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "课程名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // istName
+            // 
+            this.istName.DataPropertyName = "istName";
+            this.istName.HeaderText = "教员";
+            this.istName.Name = "istName";
+            this.istName.ReadOnly = true;
+            // 
+            // beginDate
+            // 
+            this.beginDate.DataPropertyName = "beginDate";
+            this.beginDate.HeaderText = "开始日期";
+            this.beginDate.Name = "beginDate";
+            this.beginDate.ReadOnly = true;
+            // 
+            // endDate
+            // 
+            this.endDate.DataPropertyName = "endDate";
+            this.endDate.HeaderText = "结束日期";
+            this.endDate.Name = "endDate";
+            this.endDate.ReadOnly = true;
+            // 
+            // addr
+            // 
+            this.addr.DataPropertyName = "addr";
+            this.addr.HeaderText = "培训地点";
+            this.addr.Name = "addr";
+            this.addr.ReadOnly = true;
+            // 
+            // remark
+            // 
+            this.remark.DataPropertyName = "remark";
+            this.remark.HeaderText = "备注";
+            this.remark.Name = "remark";
+            this.remark.ReadOnly = true;
             // 
             // TraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(662, 379);
+            this.ClientSize = new System.Drawing.Size(662, 344);
             this.Controls.Add(this.tabControl1);
             this.Name = "TraineeForm";
             this.Text = "我是学员";
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.courseDgView)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.ResumeLayout(false);
@@ -231,9 +289,9 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button refreshCourseBtn;
+        private System.Windows.Forms.Button courseDetailBtn;
+        private System.Windows.Forms.DataGridView courseDgView;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Button updatePwdBtn;
         private System.Windows.Forms.Button editInfoBtn;
@@ -245,5 +303,11 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn name;
+        private System.Windows.Forms.DataGridViewTextBoxColumn istName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn beginDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn remark;
     }
 }

@@ -24,8 +24,10 @@ namespace training.instructor
         public IstCourseDetailForm(string cId)
         {
             InitializeComponent();
+            commentsDgView.AutoGenerateColumns = false;
             this.courseId = cId;
             refreshTraineeInfo();
+            refreshCommentsData();
         }
 
         private void refreshTraineeInfo()
@@ -65,6 +67,30 @@ namespace training.instructor
             string jobNum = this.traineeDataSet.Tables["enrollment"].Rows[idx]["jobNumber"].ToString();
             ScoreTraineeForm scoreFm = new ScoreTraineeForm(tId, name, jobNum, this.courseId);
             scoreFm.ShowDialog();
+            refreshTraineeInfo();
+        }
+
+        private void traineeRefreshBtn_Click(object sender, EventArgs e)
+        {
+            refreshTraineeInfo();
+        }
+
+        private void refreshCommentBtn_Click(object sender, EventArgs e)
+        {
+            refreshCommentsData();
+        }
+
+        private void refreshCommentsData()
+        {
+            string conStr = "server=localhost;database=training;integrated security=SSPI";
+            SqlConnection con = new SqlConnection(conStr);
+            con.Open();
+            string sql = "select content,createdAt from comments where course_id=" + this.courseId;
+            SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
+            DataSet ds = new DataSet();
+            adapter.Fill(ds, "comments");
+            commentsDgView.DataSource = ds.Tables["comments"];
+            con.Close();
         }
     }
 }

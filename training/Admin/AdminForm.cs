@@ -487,5 +487,11 @@ namespace training.Admin
             string cId = courseComboBox.SelectedValue.ToString();
             getCourseCommentsById(cId);
         }
+
+        private void courseComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string cId = courseComboBox.SelectedValue.ToString();
+            getCourseCommentsById(cId);
+        }
     }
 }

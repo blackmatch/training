@@ -34,10 +34,12 @@
             this.scoreLabel = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.evaluationLabel = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.commentsDgView = new System.Windows.Forms.DataGridView();
             this.addCommentBtn = new System.Windows.Forms.Button();
             this.refreshCommentsBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -95,14 +97,17 @@
             this.evaluationLabel.TabIndex = 5;
             this.evaluationLabel.Text = "评语";
             // 
-            // dataGridView1
+            // commentsDgView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 178);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.Size = new System.Drawing.Size(674, 206);
-            this.dataGridView1.TabIndex = 6;
+            this.commentsDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commentsDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.content,
+            this.createdAt});
+            this.commentsDgView.Location = new System.Drawing.Point(33, 178);
+            this.commentsDgView.Name = "commentsDgView";
+            this.commentsDgView.RowTemplate.Height = 23;
+            this.commentsDgView.Size = new System.Drawing.Size(674, 206);
+            this.commentsDgView.TabIndex = 6;
             // 
             // addCommentBtn
             // 
@@ -112,6 +117,7 @@
             this.addCommentBtn.TabIndex = 7;
             this.addCommentBtn.Text = "添加评论";
             this.addCommentBtn.UseVisualStyleBackColor = true;
+            this.addCommentBtn.Click += new System.EventHandler(this.addCommentBtn_Click);
             // 
             // refreshCommentsBtn
             // 
@@ -121,6 +127,23 @@
             this.refreshCommentsBtn.TabIndex = 8;
             this.refreshCommentsBtn.Text = "刷新";
             this.refreshCommentsBtn.UseVisualStyleBackColor = true;
+            this.refreshCommentsBtn.Click += new System.EventHandler(this.refreshCommentsBtn_Click);
+            // 
+            // content
+            // 
+            this.content.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.content.DataPropertyName = "content";
+            this.content.HeaderText = "内容";
+            this.content.Name = "content";
+            this.content.ReadOnly = true;
+            this.content.Width = 54;
+            // 
+            // createdAt
+            // 
+            this.createdAt.DataPropertyName = "createdAt";
+            this.createdAt.HeaderText = "时间";
+            this.createdAt.Name = "createdAt";
+            this.createdAt.ReadOnly = true;
             // 
             // TraineeCourseDetailForm
             // 
@@ -129,7 +152,7 @@
             this.ClientSize = new System.Drawing.Size(719, 396);
             this.Controls.Add(this.refreshCommentsBtn);
             this.Controls.Add(this.addCommentBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.commentsDgView);
             this.Controls.Add(this.evaluationLabel);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.scoreLabel);
@@ -138,7 +161,7 @@
             this.Controls.Add(this.label1);
             this.Name = "TraineeCourseDetailForm";
             this.Text = "课程详情";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -152,8 +175,10 @@
         private System.Windows.Forms.Label scoreLabel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label evaluationLabel;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView commentsDgView;
         private System.Windows.Forms.Button addCommentBtn;
         private System.Windows.Forms.Button refreshCommentsBtn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
     }
 }

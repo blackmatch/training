@@ -30,7 +30,8 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.traineePage = new System.Windows.Forms.TabPage();
-            this.evaluationPage = new System.Windows.Forms.TabPage();
+            this.traineeRefreshBtn = new System.Windows.Forms.Button();
+            this.evaluateBtn = new System.Windows.Forms.Button();
             this.traineeInfoDgView = new System.Windows.Forms.DataGridView();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -38,14 +39,15 @@
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evaluateBtn = new System.Windows.Forms.Button();
-            this.traineeRefreshBtn = new System.Windows.Forms.Button();
-            this.commentsDgView = new System.Windows.Forms.DataGridView();
+            this.evaluationPage = new System.Windows.Forms.TabPage();
             this.refreshCommentBtn = new System.Windows.Forms.Button();
+            this.commentsDgView = new System.Windows.Forms.DataGridView();
+            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.traineePage.SuspendLayout();
-            this.evaluationPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.traineeInfoDgView)).BeginInit();
+            this.evaluationPage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -72,17 +74,25 @@
             this.traineePage.Text = "学员信息";
             this.traineePage.UseVisualStyleBackColor = true;
             // 
-            // evaluationPage
+            // traineeRefreshBtn
             // 
-            this.evaluationPage.Controls.Add(this.refreshCommentBtn);
-            this.evaluationPage.Controls.Add(this.commentsDgView);
-            this.evaluationPage.Location = new System.Drawing.Point(4, 22);
-            this.evaluationPage.Name = "evaluationPage";
-            this.evaluationPage.Padding = new System.Windows.Forms.Padding(3);
-            this.evaluationPage.Size = new System.Drawing.Size(733, 317);
-            this.evaluationPage.TabIndex = 1;
-            this.evaluationPage.Text = "评论信息";
-            this.evaluationPage.UseVisualStyleBackColor = true;
+            this.traineeRefreshBtn.Location = new System.Drawing.Point(102, 17);
+            this.traineeRefreshBtn.Name = "traineeRefreshBtn";
+            this.traineeRefreshBtn.Size = new System.Drawing.Size(75, 23);
+            this.traineeRefreshBtn.TabIndex = 2;
+            this.traineeRefreshBtn.Text = "刷新";
+            this.traineeRefreshBtn.UseVisualStyleBackColor = true;
+            this.traineeRefreshBtn.Click += new System.EventHandler(this.traineeRefreshBtn_Click);
+            // 
+            // evaluateBtn
+            // 
+            this.evaluateBtn.Location = new System.Drawing.Point(6, 17);
+            this.evaluateBtn.Name = "evaluateBtn";
+            this.evaluateBtn.Size = new System.Drawing.Size(75, 23);
+            this.evaluateBtn.TabIndex = 1;
+            this.evaluateBtn.Text = "打分";
+            this.evaluateBtn.UseVisualStyleBackColor = true;
+            this.evaluateBtn.Click += new System.EventHandler(this.evaluateBtn_Click);
             // 
             // traineeInfoDgView
             // 
@@ -142,33 +152,17 @@
             this.evaluation.Name = "evaluation";
             this.evaluation.ReadOnly = true;
             // 
-            // evaluateBtn
+            // evaluationPage
             // 
-            this.evaluateBtn.Location = new System.Drawing.Point(6, 17);
-            this.evaluateBtn.Name = "evaluateBtn";
-            this.evaluateBtn.Size = new System.Drawing.Size(75, 23);
-            this.evaluateBtn.TabIndex = 1;
-            this.evaluateBtn.Text = "打分";
-            this.evaluateBtn.UseVisualStyleBackColor = true;
-            this.evaluateBtn.Click += new System.EventHandler(this.evaluateBtn_Click);
-            // 
-            // traineeRefreshBtn
-            // 
-            this.traineeRefreshBtn.Location = new System.Drawing.Point(102, 17);
-            this.traineeRefreshBtn.Name = "traineeRefreshBtn";
-            this.traineeRefreshBtn.Size = new System.Drawing.Size(75, 23);
-            this.traineeRefreshBtn.TabIndex = 2;
-            this.traineeRefreshBtn.Text = "刷新";
-            this.traineeRefreshBtn.UseVisualStyleBackColor = true;
-            // 
-            // commentsDgView
-            // 
-            this.commentsDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.commentsDgView.Location = new System.Drawing.Point(6, 54);
-            this.commentsDgView.Name = "commentsDgView";
-            this.commentsDgView.RowTemplate.Height = 23;
-            this.commentsDgView.Size = new System.Drawing.Size(721, 257);
-            this.commentsDgView.TabIndex = 0;
+            this.evaluationPage.Controls.Add(this.refreshCommentBtn);
+            this.evaluationPage.Controls.Add(this.commentsDgView);
+            this.evaluationPage.Location = new System.Drawing.Point(4, 22);
+            this.evaluationPage.Name = "evaluationPage";
+            this.evaluationPage.Padding = new System.Windows.Forms.Padding(3);
+            this.evaluationPage.Size = new System.Drawing.Size(733, 317);
+            this.evaluationPage.TabIndex = 1;
+            this.evaluationPage.Text = "评论信息";
+            this.evaluationPage.UseVisualStyleBackColor = true;
             // 
             // refreshCommentBtn
             // 
@@ -178,6 +172,35 @@
             this.refreshCommentBtn.TabIndex = 1;
             this.refreshCommentBtn.Text = "刷新";
             this.refreshCommentBtn.UseVisualStyleBackColor = true;
+            this.refreshCommentBtn.Click += new System.EventHandler(this.refreshCommentBtn_Click);
+            // 
+            // commentsDgView
+            // 
+            this.commentsDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.commentsDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.content,
+            this.createdAt});
+            this.commentsDgView.Location = new System.Drawing.Point(6, 54);
+            this.commentsDgView.Name = "commentsDgView";
+            this.commentsDgView.RowTemplate.Height = 23;
+            this.commentsDgView.Size = new System.Drawing.Size(721, 257);
+            this.commentsDgView.TabIndex = 0;
+            // 
+            // content
+            // 
+            this.content.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.content.DataPropertyName = "content";
+            this.content.HeaderText = "内容";
+            this.content.Name = "content";
+            this.content.ReadOnly = true;
+            this.content.Width = 54;
+            // 
+            // createdAt
+            // 
+            this.createdAt.DataPropertyName = "createdAt";
+            this.createdAt.HeaderText = "时间";
+            this.createdAt.Name = "createdAt";
+            this.createdAt.ReadOnly = true;
             // 
             // IstCourseDetailForm
             // 
@@ -189,8 +212,8 @@
             this.Text = "课程详情";
             this.tabControl1.ResumeLayout(false);
             this.traineePage.ResumeLayout(false);
-            this.evaluationPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.traineeInfoDgView)).EndInit();
+            this.evaluationPage.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).EndInit();
             this.ResumeLayout(false);
 
@@ -212,5 +235,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
         private System.Windows.Forms.Button refreshCommentBtn;
         private System.Windows.Forms.DataGridView commentsDgView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
     }
 }

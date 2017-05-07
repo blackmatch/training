@@ -34,3 +34,5 @@ E:\school\develop\training\training\obj\Debug\training.Admin.CourseAddTraineeFor
 E:\school\develop\training\training\obj\Debug\training.instructor.IstCourseDetailForm.resources
 E:\school\develop\training\training\obj\Debug\training.instructor.ScoreTraineeForm.resources
 E:\school\develop\training\training\obj\Debug\training.trainee.TraineeCourseDetailForm.resources
+E:\school\develop\training\training\obj\Debug\training.common.UpdatePwdForm.resources
+E:\school\develop\training\training\obj\Debug\training.trainee.AddCourseCommentForm.resources

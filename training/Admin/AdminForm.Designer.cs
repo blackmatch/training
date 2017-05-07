@@ -44,20 +44,20 @@
             this.addIstBtn = new System.Windows.Forms.Button();
             this.istDgView = new System.Windows.Forms.DataGridView();
             this.courseContainer = new System.Windows.Forms.TabPage();
+            this.courseDetailBtn = new System.Windows.Forms.Button();
             this.refreshCourseBtn = new System.Windows.Forms.Button();
             this.deleteCourseBtn = new System.Windows.Forms.Button();
             this.editCourseBtn = new System.Windows.Forms.Button();
             this.addCourseBtn = new System.Windows.Forms.Button();
             this.courseDgView = new System.Windows.Forms.DataGridView();
-            this.courseDetailBtn = new System.Windows.Forms.Button();
             this.commentPage = new System.Windows.Forms.TabPage();
-            this.courseComboBox = new System.Windows.Forms.ComboBox();
-            this.commentDgView = new System.Windows.Forms.DataGridView();
-            this.deleteCommentBtn = new System.Windows.Forms.Button();
             this.refreshCommentBtn = new System.Windows.Forms.Button();
+            this.deleteCommentBtn = new System.Windows.Forms.Button();
+            this.commentDgView = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.courseComboBox = new System.Windows.Forms.ComboBox();
             this.courseTab.SuspendLayout();
             this.traineeContainer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.traineeDgView)).BeginInit();
@@ -256,6 +256,16 @@
             this.courseContainer.UseVisualStyleBackColor = true;
             this.courseContainer.Enter += new System.EventHandler(this.courseContainer_Enter);
             // 
+            // courseDetailBtn
+            // 
+            this.courseDetailBtn.Location = new System.Drawing.Point(222, 29);
+            this.courseDetailBtn.Name = "courseDetailBtn";
+            this.courseDetailBtn.Size = new System.Drawing.Size(75, 23);
+            this.courseDetailBtn.TabIndex = 5;
+            this.courseDetailBtn.Text = "查看详情";
+            this.courseDetailBtn.UseVisualStyleBackColor = true;
+            this.courseDetailBtn.Click += new System.EventHandler(this.courseDetailBtn_Click);
+            // 
             // refreshCourseBtn
             // 
             this.refreshCourseBtn.Location = new System.Drawing.Point(430, 29);
@@ -307,16 +317,6 @@
             this.courseDgView.Size = new System.Drawing.Size(716, 215);
             this.courseDgView.TabIndex = 0;
             // 
-            // courseDetailBtn
-            // 
-            this.courseDetailBtn.Location = new System.Drawing.Point(222, 29);
-            this.courseDetailBtn.Name = "courseDetailBtn";
-            this.courseDetailBtn.Size = new System.Drawing.Size(75, 23);
-            this.courseDetailBtn.TabIndex = 5;
-            this.courseDetailBtn.Text = "查看详情";
-            this.courseDetailBtn.UseVisualStyleBackColor = true;
-            this.courseDetailBtn.Click += new System.EventHandler(this.courseDetailBtn_Click);
-            // 
             // commentPage
             // 
             this.commentPage.Controls.Add(this.refreshCommentBtn);
@@ -332,13 +332,26 @@
             this.commentPage.UseVisualStyleBackColor = true;
             this.commentPage.Enter += new System.EventHandler(this.commentPage_Enter);
             // 
-            // courseComboBox
+            // refreshCommentBtn
             // 
-            this.courseComboBox.FormattingEnabled = true;
-            this.courseComboBox.Location = new System.Drawing.Point(6, 31);
-            this.courseComboBox.Name = "courseComboBox";
-            this.courseComboBox.Size = new System.Drawing.Size(245, 20);
-            this.courseComboBox.TabIndex = 0;
+            this.refreshCommentBtn.Location = new System.Drawing.Point(409, 28);
+            this.refreshCommentBtn.Name = "refreshCommentBtn";
+            this.refreshCommentBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshCommentBtn.TabIndex = 3;
+            this.refreshCommentBtn.Text = "刷新";
+            this.refreshCommentBtn.UseVisualStyleBackColor = true;
+            this.refreshCommentBtn.Click += new System.EventHandler(this.refreshCommentBtn_Click);
+            // 
+            // deleteCommentBtn
+            // 
+            this.deleteCommentBtn.ForeColor = System.Drawing.Color.Red;
+            this.deleteCommentBtn.Location = new System.Drawing.Point(296, 28);
+            this.deleteCommentBtn.Name = "deleteCommentBtn";
+            this.deleteCommentBtn.Size = new System.Drawing.Size(75, 23);
+            this.deleteCommentBtn.TabIndex = 2;
+            this.deleteCommentBtn.Text = "删除";
+            this.deleteCommentBtn.UseVisualStyleBackColor = true;
+            this.deleteCommentBtn.Click += new System.EventHandler(this.deleteCommentBtn_Click);
             // 
             // commentDgView
             // 
@@ -353,27 +366,6 @@
             this.commentDgView.RowTemplate.Height = 23;
             this.commentDgView.Size = new System.Drawing.Size(716, 215);
             this.commentDgView.TabIndex = 1;
-            // 
-            // deleteCommentBtn
-            // 
-            this.deleteCommentBtn.ForeColor = System.Drawing.Color.Red;
-            this.deleteCommentBtn.Location = new System.Drawing.Point(296, 28);
-            this.deleteCommentBtn.Name = "deleteCommentBtn";
-            this.deleteCommentBtn.Size = new System.Drawing.Size(75, 23);
-            this.deleteCommentBtn.TabIndex = 2;
-            this.deleteCommentBtn.Text = "删除";
-            this.deleteCommentBtn.UseVisualStyleBackColor = true;
-            this.deleteCommentBtn.Click += new System.EventHandler(this.deleteCommentBtn_Click);
-            // 
-            // refreshCommentBtn
-            // 
-            this.refreshCommentBtn.Location = new System.Drawing.Point(409, 28);
-            this.refreshCommentBtn.Name = "refreshCommentBtn";
-            this.refreshCommentBtn.Size = new System.Drawing.Size(75, 23);
-            this.refreshCommentBtn.TabIndex = 3;
-            this.refreshCommentBtn.Text = "刷新";
-            this.refreshCommentBtn.UseVisualStyleBackColor = true;
-            this.refreshCommentBtn.Click += new System.EventHandler(this.refreshCommentBtn_Click);
             // 
             // id
             // 
@@ -395,6 +387,15 @@
             this.createdAt.HeaderText = "时间";
             this.createdAt.Name = "createdAt";
             this.createdAt.ReadOnly = true;
+            // 
+            // courseComboBox
+            // 
+            this.courseComboBox.FormattingEnabled = true;
+            this.courseComboBox.Location = new System.Drawing.Point(6, 31);
+            this.courseComboBox.Name = "courseComboBox";
+            this.courseComboBox.Size = new System.Drawing.Size(245, 20);
+            this.courseComboBox.TabIndex = 0;
+            this.courseComboBox.SelectedIndexChanged += new System.EventHandler(this.courseComboBox_SelectedIndexChanged);
             // 
             // AdminForm
             // 

@@ -98,6 +98,12 @@
     <Compile Include="Admin\EditTraineeForm.Designer.cs">
       <DependentUpon>EditTraineeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="common\UpdatePwdForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="common\UpdatePwdForm.Designer.cs">
+      <DependentUpon>UpdatePwdForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EntryForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +141,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="tool\Tool.cs" />
+    <Compile Include="trainee\AddCourseCommentForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="trainee\AddCourseCommentForm.Designer.cs">
+      <DependentUpon>AddCourseCommentForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="trainee\TraineeCourseDetailForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -174,6 +186,9 @@
     <EmbeddedResource Include="Admin\EditTraineeForm.resx">
       <DependentUpon>EditTraineeForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="common\UpdatePwdForm.resx">
+      <DependentUpon>UpdatePwdForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EntryForm.resx">
       <DependentUpon>EntryForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -198,6 +213,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="trainee\AddCourseCommentForm.resx">
+      <DependentUpon>AddCourseCommentForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="trainee\TraineeCourseDetailForm.resx">
       <DependentUpon>TraineeCourseDetailForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -217,6 +235,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
