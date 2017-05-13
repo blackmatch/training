@@ -42,7 +42,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(310, 233);
+            this.okBtn.Location = new System.Drawing.Point(310, 246);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 19;
@@ -52,7 +52,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(81, 233);
+            this.cancelBtn.Location = new System.Drawing.Point(177, 246);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 18;
@@ -134,7 +134,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(473, 320);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(535, 353);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.istNumTB);

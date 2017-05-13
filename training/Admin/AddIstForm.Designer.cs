@@ -133,7 +133,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(527, 317);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(535, 350);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.istNumTB);

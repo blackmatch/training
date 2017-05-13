@@ -63,6 +63,7 @@
             // 
             // traineePage
             // 
+            this.traineePage.BackColor = System.Drawing.Color.SkyBlue;
             this.traineePage.Controls.Add(this.traineeRefreshBtn);
             this.traineePage.Controls.Add(this.evaluateBtn);
             this.traineePage.Controls.Add(this.traineeInfoDgView);
@@ -72,7 +73,6 @@
             this.traineePage.Size = new System.Drawing.Size(733, 317);
             this.traineePage.TabIndex = 0;
             this.traineePage.Text = "学员信息";
-            this.traineePage.UseVisualStyleBackColor = true;
             // 
             // traineeRefreshBtn
             // 
@@ -96,6 +96,7 @@
             // 
             // traineeInfoDgView
             // 
+            this.traineeInfoDgView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.traineeInfoDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.traineeInfoDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -206,6 +207,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(765, 367);
             this.Controls.Add(this.tabControl1);
             this.Name = "IstCourseDetailForm";

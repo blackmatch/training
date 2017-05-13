@@ -33,6 +33,12 @@
             this.refreshCourseBtn = new System.Windows.Forms.Button();
             this.courseDetailBtn = new System.Windows.Forms.Button();
             this.courseDgView = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.istName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.updatePwdBtn = new System.Windows.Forms.Button();
             this.editInfoBtn = new System.Windows.Forms.Button();
@@ -44,12 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.istName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.courseDgView)).BeginInit();
@@ -68,6 +68,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.SkyBlue;
             this.tabPage1.Controls.Add(this.refreshCourseBtn);
             this.tabPage1.Controls.Add(this.courseDetailBtn);
             this.tabPage1.Controls.Add(this.courseDgView);
@@ -77,7 +78,6 @@
             this.tabPage1.Size = new System.Drawing.Size(630, 296);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "我的课程";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // refreshCourseBtn
             // 
@@ -100,6 +100,7 @@
             // 
             // courseDgView
             // 
+            this.courseDgView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.courseDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -113,6 +114,48 @@
             this.courseDgView.RowTemplate.Height = 23;
             this.courseDgView.Size = new System.Drawing.Size(618, 210);
             this.courseDgView.TabIndex = 0;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "课程名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // istName
+            // 
+            this.istName.DataPropertyName = "istName";
+            this.istName.HeaderText = "教员";
+            this.istName.Name = "istName";
+            this.istName.ReadOnly = true;
+            // 
+            // beginDate
+            // 
+            this.beginDate.DataPropertyName = "beginDate";
+            this.beginDate.HeaderText = "开始日期";
+            this.beginDate.Name = "beginDate";
+            this.beginDate.ReadOnly = true;
+            // 
+            // endDate
+            // 
+            this.endDate.DataPropertyName = "endDate";
+            this.endDate.HeaderText = "结束日期";
+            this.endDate.Name = "endDate";
+            this.endDate.ReadOnly = true;
+            // 
+            // addr
+            // 
+            this.addr.DataPropertyName = "addr";
+            this.addr.HeaderText = "培训地点";
+            this.addr.Name = "addr";
+            this.addr.ReadOnly = true;
+            // 
+            // remark
+            // 
+            this.remark.DataPropertyName = "remark";
+            this.remark.HeaderText = "备注";
+            this.remark.Name = "remark";
+            this.remark.ReadOnly = true;
             // 
             // tabPage2
             // 
@@ -226,52 +269,11 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "姓名：";
             // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "课程名称";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // istName
-            // 
-            this.istName.DataPropertyName = "istName";
-            this.istName.HeaderText = "教员";
-            this.istName.Name = "istName";
-            this.istName.ReadOnly = true;
-            // 
-            // beginDate
-            // 
-            this.beginDate.DataPropertyName = "beginDate";
-            this.beginDate.HeaderText = "开始日期";
-            this.beginDate.Name = "beginDate";
-            this.beginDate.ReadOnly = true;
-            // 
-            // endDate
-            // 
-            this.endDate.DataPropertyName = "endDate";
-            this.endDate.HeaderText = "结束日期";
-            this.endDate.Name = "endDate";
-            this.endDate.ReadOnly = true;
-            // 
-            // addr
-            // 
-            this.addr.DataPropertyName = "addr";
-            this.addr.HeaderText = "培训地点";
-            this.addr.Name = "addr";
-            this.addr.ReadOnly = true;
-            // 
-            // remark
-            // 
-            this.remark.DataPropertyName = "remark";
-            this.remark.HeaderText = "备注";
-            this.remark.Name = "remark";
-            this.remark.ReadOnly = true;
-            // 
             // TraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(662, 344);
             this.Controls.Add(this.tabControl1);
             this.Name = "TraineeForm";

@@ -33,6 +33,12 @@
             this.refreshCourseBtn = new System.Windows.Forms.Button();
             this.courseDetailBtn = new System.Windows.Forms.Button();
             this.courseDgView = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.beginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.updatePwdBtn = new System.Windows.Forms.Button();
             this.editInfoBtn = new System.Windows.Forms.Button();
@@ -44,12 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.beginDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.endDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.remark = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.courseDgView)).BeginInit();
@@ -68,6 +68,7 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.BackColor = System.Drawing.Color.SkyBlue;
             this.tabPage1.Controls.Add(this.refreshCourseBtn);
             this.tabPage1.Controls.Add(this.courseDetailBtn);
             this.tabPage1.Controls.Add(this.courseDgView);
@@ -77,7 +78,6 @@
             this.tabPage1.Size = new System.Drawing.Size(638, 298);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课程管理";
-            this.tabPage1.UseVisualStyleBackColor = true;
             // 
             // refreshCourseBtn
             // 
@@ -100,6 +100,7 @@
             // 
             // courseDgView
             // 
+            this.courseDgView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.courseDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -108,16 +109,58 @@
             this.endDate,
             this.addr,
             this.remark});
-            this.courseDgView.Location = new System.Drawing.Point(6, 86);
+            this.courseDgView.Location = new System.Drawing.Point(3, 86);
             this.courseDgView.MultiSelect = false;
             this.courseDgView.Name = "courseDgView";
             this.courseDgView.RowTemplate.Height = 23;
             this.courseDgView.Size = new System.Drawing.Size(626, 206);
             this.courseDgView.TabIndex = 0;
             // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "名称";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // beginDate
+            // 
+            this.beginDate.DataPropertyName = "beginDate";
+            this.beginDate.HeaderText = "开始日期";
+            this.beginDate.Name = "beginDate";
+            this.beginDate.ReadOnly = true;
+            // 
+            // endDate
+            // 
+            this.endDate.DataPropertyName = "endDate";
+            this.endDate.HeaderText = "结束日期";
+            this.endDate.Name = "endDate";
+            this.endDate.ReadOnly = true;
+            // 
+            // addr
+            // 
+            this.addr.DataPropertyName = "addr";
+            this.addr.HeaderText = "地点";
+            this.addr.Name = "addr";
+            this.addr.ReadOnly = true;
+            // 
+            // remark
+            // 
+            this.remark.DataPropertyName = "remark";
+            this.remark.HeaderText = "备注";
+            this.remark.Name = "remark";
+            this.remark.ReadOnly = true;
+            // 
             // tabPage2
             // 
-            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(255)))));
+            this.tabPage2.BackColor = System.Drawing.SystemColors.Window;
             this.tabPage2.Controls.Add(this.updatePwdBtn);
             this.tabPage2.Controls.Add(this.editInfoBtn);
             this.tabPage2.Controls.Add(this.ageLabel);
@@ -233,53 +276,12 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "姓名：";
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "名称";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // beginDate
-            // 
-            this.beginDate.DataPropertyName = "beginDate";
-            this.beginDate.HeaderText = "开始日期";
-            this.beginDate.Name = "beginDate";
-            this.beginDate.ReadOnly = true;
-            // 
-            // endDate
-            // 
-            this.endDate.DataPropertyName = "endDate";
-            this.endDate.HeaderText = "结束日期";
-            this.endDate.Name = "endDate";
-            this.endDate.ReadOnly = true;
-            // 
-            // addr
-            // 
-            this.addr.DataPropertyName = "addr";
-            this.addr.HeaderText = "地点";
-            this.addr.Name = "addr";
-            this.addr.ReadOnly = true;
-            // 
-            // remark
-            // 
-            this.remark.DataPropertyName = "remark";
-            this.remark.HeaderText = "备注";
-            this.remark.Name = "remark";
-            this.remark.ReadOnly = true;
-            // 
             // InstructorForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(670, 352);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(637, 352);
             this.Controls.Add(this.tabControl1);
             this.Name = "InstructorForm";
             this.Text = "我是教员";

@@ -47,13 +47,13 @@
             // 
             this.contentRichTextBox.Location = new System.Drawing.Point(25, 68);
             this.contentRichTextBox.Name = "contentRichTextBox";
-            this.contentRichTextBox.Size = new System.Drawing.Size(320, 216);
+            this.contentRichTextBox.Size = new System.Drawing.Size(513, 216);
             this.contentRichTextBox.TabIndex = 1;
             this.contentRichTextBox.Text = "";
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(65, 302);
+            this.cancelBtn.Location = new System.Drawing.Point(150, 302);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 2;
@@ -63,7 +63,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(225, 302);
+            this.okBtn.Location = new System.Drawing.Point(349, 302);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 3;
@@ -75,7 +75,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 337);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(581, 352);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.contentRichTextBox);

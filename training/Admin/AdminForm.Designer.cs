@@ -75,10 +75,10 @@
             this.courseTab.Controls.Add(this.istContainer);
             this.courseTab.Controls.Add(this.courseContainer);
             this.courseTab.Controls.Add(this.commentPage);
-            this.courseTab.Location = new System.Drawing.Point(12, 12);
+            this.courseTab.Location = new System.Drawing.Point(12, 31);
             this.courseTab.Name = "courseTab";
             this.courseTab.SelectedIndex = 0;
-            this.courseTab.Size = new System.Drawing.Size(736, 320);
+            this.courseTab.Size = new System.Drawing.Size(736, 301);
             this.courseTab.TabIndex = 0;
             this.courseTab.Tag = "";
             // 
@@ -152,6 +152,7 @@
             // 
             // traineeDgView
             // 
+            this.traineeDgView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.traineeDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.traineeDgView.Location = new System.Drawing.Point(6, 66);
             this.traineeDgView.MultiSelect = false;
@@ -172,7 +173,7 @@
             this.istContainer.Location = new System.Drawing.Point(4, 22);
             this.istContainer.Name = "istContainer";
             this.istContainer.Padding = new System.Windows.Forms.Padding(3);
-            this.istContainer.Size = new System.Drawing.Size(728, 294);
+            this.istContainer.Size = new System.Drawing.Size(728, 275);
             this.istContainer.TabIndex = 1;
             this.istContainer.Text = "教员管理";
             this.istContainer.UseVisualStyleBackColor = true;
@@ -231,7 +232,9 @@
             // 
             // istDgView
             // 
+            this.istDgView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.istDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.istDgView.GridColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.istDgView.Location = new System.Drawing.Point(6, 74);
             this.istDgView.MultiSelect = false;
             this.istDgView.Name = "istDgView";
@@ -309,6 +312,7 @@
             // 
             // courseDgView
             // 
+            this.courseDgView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.courseDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.courseDgView.Location = new System.Drawing.Point(6, 73);
             this.courseDgView.MultiSelect = false;
@@ -326,7 +330,7 @@
             this.commentPage.Location = new System.Drawing.Point(4, 22);
             this.commentPage.Name = "commentPage";
             this.commentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.commentPage.Size = new System.Drawing.Size(728, 294);
+            this.commentPage.Size = new System.Drawing.Size(728, 270);
             this.commentPage.TabIndex = 3;
             this.commentPage.Text = "评论管理";
             this.commentPage.UseVisualStyleBackColor = true;
@@ -355,6 +359,7 @@
             // 
             // commentDgView
             // 
+            this.commentDgView.BackgroundColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.commentDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commentDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
@@ -401,7 +406,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 337);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(585, 354);
             this.Controls.Add(this.courseTab);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "AdminForm";

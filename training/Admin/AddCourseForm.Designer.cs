@@ -131,7 +131,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(48, 347);
+            this.cancelBtn.Location = new System.Drawing.Point(136, 347);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 10;
@@ -171,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(494, 429);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(558, 376);
             this.Controls.Add(this.istComBo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.okBtn);

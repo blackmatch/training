@@ -29,16 +29,17 @@
         private void InitializeComponent()
         {
             this.traineeDgView = new System.Windows.Forms.DataGridView();
+            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.jobNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.okBtn = new System.Windows.Forms.Button();
             this.cancelBtn = new System.Windows.Forms.Button();
-            this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.jobNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.traineeDgView)).BeginInit();
             this.SuspendLayout();
             // 
             // traineeDgView
             // 
+            this.traineeDgView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.traineeDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.traineeDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.name,
@@ -49,6 +50,20 @@
             this.traineeDgView.RowTemplate.Height = 23;
             this.traineeDgView.Size = new System.Drawing.Size(258, 268);
             this.traineeDgView.TabIndex = 0;
+            // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "姓名";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // jobNumber
+            // 
+            this.jobNumber.DataPropertyName = "jobNumber";
+            this.jobNumber.HeaderText = "工号";
+            this.jobNumber.Name = "jobNumber";
+            this.jobNumber.ReadOnly = true;
             // 
             // label1
             // 
@@ -80,25 +95,12 @@
             this.cancelBtn.UseVisualStyleBackColor = true;
             this.cancelBtn.Click += new System.EventHandler(this.cancelBtn_Click);
             // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "姓名";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // jobNumber
-            // 
-            this.jobNumber.DataPropertyName = "jobNumber";
-            this.jobNumber.HeaderText = "工号";
-            this.jobNumber.Name = "jobNumber";
-            this.jobNumber.ReadOnly = true;
-            // 
             // CourseAddTraineeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(422, 352);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(551, 352);
             this.Controls.Add(this.cancelBtn);
             this.Controls.Add(this.okBtn);
             this.Controls.Add(this.label1);

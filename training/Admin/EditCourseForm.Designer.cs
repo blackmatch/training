@@ -64,7 +64,7 @@
             // 
             // okBtn
             // 
-            this.okBtn.Location = new System.Drawing.Point(352, 329);
+            this.okBtn.Location = new System.Drawing.Point(338, 321);
             this.okBtn.Name = "okBtn";
             this.okBtn.Size = new System.Drawing.Size(75, 23);
             this.okBtn.TabIndex = 25;
@@ -74,7 +74,7 @@
             // 
             // cancelBtn
             // 
-            this.cancelBtn.Location = new System.Drawing.Point(47, 329);
+            this.cancelBtn.Location = new System.Drawing.Point(135, 321);
             this.cancelBtn.Name = "cancelBtn";
             this.cancelBtn.Size = new System.Drawing.Size(75, 23);
             this.cancelBtn.TabIndex = 24;
@@ -171,7 +171,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(518, 368);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(532, 356);
             this.Controls.Add(this.istComBo);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.okBtn);

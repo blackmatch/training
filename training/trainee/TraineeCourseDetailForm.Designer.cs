@@ -35,10 +35,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.evaluationLabel = new System.Windows.Forms.Label();
             this.commentsDgView = new System.Windows.Forms.DataGridView();
-            this.addCommentBtn = new System.Windows.Forms.Button();
-            this.refreshCommentsBtn = new System.Windows.Forms.Button();
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addCommentBtn = new System.Windows.Forms.Button();
+            this.refreshCommentsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -99,35 +99,16 @@
             // 
             // commentsDgView
             // 
+            this.commentsDgView.BackgroundColor = System.Drawing.SystemColors.Window;
             this.commentsDgView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.commentsDgView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.content,
             this.createdAt});
-            this.commentsDgView.Location = new System.Drawing.Point(33, 178);
+            this.commentsDgView.Location = new System.Drawing.Point(33, 164);
             this.commentsDgView.Name = "commentsDgView";
             this.commentsDgView.RowTemplate.Height = 23;
             this.commentsDgView.Size = new System.Drawing.Size(674, 206);
             this.commentsDgView.TabIndex = 6;
-            // 
-            // addCommentBtn
-            // 
-            this.addCommentBtn.Location = new System.Drawing.Point(33, 149);
-            this.addCommentBtn.Name = "addCommentBtn";
-            this.addCommentBtn.Size = new System.Drawing.Size(75, 23);
-            this.addCommentBtn.TabIndex = 7;
-            this.addCommentBtn.Text = "添加评论";
-            this.addCommentBtn.UseVisualStyleBackColor = true;
-            this.addCommentBtn.Click += new System.EventHandler(this.addCommentBtn_Click);
-            // 
-            // refreshCommentsBtn
-            // 
-            this.refreshCommentsBtn.Location = new System.Drawing.Point(144, 149);
-            this.refreshCommentsBtn.Name = "refreshCommentsBtn";
-            this.refreshCommentsBtn.Size = new System.Drawing.Size(75, 23);
-            this.refreshCommentsBtn.TabIndex = 8;
-            this.refreshCommentsBtn.Text = "刷新";
-            this.refreshCommentsBtn.UseVisualStyleBackColor = true;
-            this.refreshCommentsBtn.Click += new System.EventHandler(this.refreshCommentsBtn_Click);
             // 
             // content
             // 
@@ -145,11 +126,32 @@
             this.createdAt.Name = "createdAt";
             this.createdAt.ReadOnly = true;
             // 
+            // addCommentBtn
+            // 
+            this.addCommentBtn.Location = new System.Drawing.Point(33, 135);
+            this.addCommentBtn.Name = "addCommentBtn";
+            this.addCommentBtn.Size = new System.Drawing.Size(75, 23);
+            this.addCommentBtn.TabIndex = 7;
+            this.addCommentBtn.Text = "添加评论";
+            this.addCommentBtn.UseVisualStyleBackColor = true;
+            this.addCommentBtn.Click += new System.EventHandler(this.addCommentBtn_Click);
+            // 
+            // refreshCommentsBtn
+            // 
+            this.refreshCommentsBtn.Location = new System.Drawing.Point(143, 135);
+            this.refreshCommentsBtn.Name = "refreshCommentsBtn";
+            this.refreshCommentsBtn.Size = new System.Drawing.Size(75, 23);
+            this.refreshCommentsBtn.TabIndex = 8;
+            this.refreshCommentsBtn.Text = "刷新";
+            this.refreshCommentsBtn.UseVisualStyleBackColor = true;
+            this.refreshCommentsBtn.Click += new System.EventHandler(this.refreshCommentsBtn_Click);
+            // 
             // TraineeCourseDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(719, 396);
+            this.BackColor = System.Drawing.Color.SkyBlue;
+            this.ClientSize = new System.Drawing.Size(577, 351);
             this.Controls.Add(this.refreshCommentsBtn);
             this.Controls.Add(this.addCommentBtn);
             this.Controls.Add(this.commentsDgView);
