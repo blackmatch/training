@@ -19,7 +19,6 @@ E:\school\develop\training\training\obj\Debug\training.csprojResolveAssemblyRefe
 E:\school\develop\training\training\obj\Debug\training.Admin.AddTraineeForm.resources
 E:\school\develop\training\training\obj\Debug\training.Admin.AdminForm.resources
 E:\school\develop\training\training\obj\Debug\training.EntryForm.resources
-E:\school\develop\training\training\obj\Debug\training.LoginForms.AdminLoginForm.resources
 E:\school\develop\training\training\obj\Debug\training.Properties.Resources.resources
 E:\school\develop\training\training\obj\Debug\training.csproj.GenerateResource.Cache
 E:\school\develop\training\training\obj\Debug\training.Admin.AddIstForm.resources

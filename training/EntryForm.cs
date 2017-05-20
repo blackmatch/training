@@ -10,7 +10,6 @@ using System.Windows.Forms;
 
 //custom
 using System.Data.SqlClient;    //使用SqlConnection与sql server交互
-using training.LoginForms;
 using training.Admin;
 using training.instructor;
 using training.trainee;
