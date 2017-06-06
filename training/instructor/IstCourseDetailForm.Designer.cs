@@ -33,17 +33,17 @@
             this.traineeRefreshBtn = new System.Windows.Forms.Button();
             this.evaluateBtn = new System.Windows.Forms.Button();
             this.traineeInfoDgView = new System.Windows.Forms.DataGridView();
+            this.evaluationPage = new System.Windows.Forms.TabPage();
+            this.refreshCommentBtn = new System.Windows.Forms.Button();
+            this.commentsDgView = new System.Windows.Forms.DataGridView();
+            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.name = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.jobNumber = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gender = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.age = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.score = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.evaluation = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.evaluationPage = new System.Windows.Forms.TabPage();
-            this.refreshCommentBtn = new System.Windows.Forms.Button();
-            this.commentsDgView = new System.Windows.Forms.DataGridView();
-            this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl1.SuspendLayout();
             this.traineePage.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.traineeInfoDgView)).BeginInit();
@@ -111,48 +111,6 @@
             this.traineeInfoDgView.Size = new System.Drawing.Size(721, 255);
             this.traineeInfoDgView.TabIndex = 0;
             // 
-            // name
-            // 
-            this.name.DataPropertyName = "name";
-            this.name.HeaderText = "姓名";
-            this.name.Name = "name";
-            this.name.ReadOnly = true;
-            // 
-            // jobNumber
-            // 
-            this.jobNumber.DataPropertyName = "jobNumber";
-            this.jobNumber.HeaderText = "工号";
-            this.jobNumber.Name = "jobNumber";
-            this.jobNumber.ReadOnly = true;
-            // 
-            // gender
-            // 
-            this.gender.DataPropertyName = "gender";
-            this.gender.HeaderText = "性别";
-            this.gender.Name = "gender";
-            this.gender.ReadOnly = true;
-            // 
-            // age
-            // 
-            this.age.DataPropertyName = "age";
-            this.age.HeaderText = "年龄";
-            this.age.Name = "age";
-            this.age.ReadOnly = true;
-            // 
-            // score
-            // 
-            this.score.DataPropertyName = "score";
-            this.score.HeaderText = "得分";
-            this.score.Name = "score";
-            this.score.ReadOnly = true;
-            // 
-            // evaluation
-            // 
-            this.evaluation.DataPropertyName = "evaluation";
-            this.evaluation.HeaderText = "评语";
-            this.evaluation.Name = "evaluation";
-            this.evaluation.ReadOnly = true;
-            // 
             // evaluationPage
             // 
             this.evaluationPage.Controls.Add(this.refreshCommentBtn);
@@ -203,6 +161,50 @@
             this.createdAt.Name = "createdAt";
             this.createdAt.ReadOnly = true;
             // 
+            // name
+            // 
+            this.name.DataPropertyName = "name";
+            this.name.HeaderText = "姓名";
+            this.name.Name = "name";
+            this.name.ReadOnly = true;
+            // 
+            // jobNumber
+            // 
+            this.jobNumber.DataPropertyName = "jobNumber";
+            this.jobNumber.HeaderText = "工号";
+            this.jobNumber.Name = "jobNumber";
+            this.jobNumber.ReadOnly = true;
+            // 
+            // gender
+            // 
+            this.gender.DataPropertyName = "gender";
+            this.gender.HeaderText = "性别";
+            this.gender.Name = "gender";
+            this.gender.ReadOnly = true;
+            // 
+            // age
+            // 
+            this.age.DataPropertyName = "age";
+            this.age.HeaderText = "年龄";
+            this.age.Name = "age";
+            this.age.ReadOnly = true;
+            // 
+            // score
+            // 
+            this.score.DataPropertyName = "score";
+            this.score.HeaderText = "得分";
+            this.score.Name = "score";
+            this.score.ReadOnly = true;
+            // 
+            // evaluation
+            // 
+            this.evaluation.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
+            this.evaluation.DataPropertyName = "evaluation";
+            this.evaluation.HeaderText = "评语";
+            this.evaluation.Name = "evaluation";
+            this.evaluation.ReadOnly = true;
+            this.evaluation.Width = 54;
+            // 
             // IstCourseDetailForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -229,15 +231,15 @@
         private System.Windows.Forms.Button traineeRefreshBtn;
         private System.Windows.Forms.Button evaluateBtn;
         private System.Windows.Forms.DataGridView traineeInfoDgView;
+        private System.Windows.Forms.Button refreshCommentBtn;
+        private System.Windows.Forms.DataGridView commentsDgView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn content;
+        private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
         private System.Windows.Forms.DataGridViewTextBoxColumn name;
         private System.Windows.Forms.DataGridViewTextBoxColumn jobNumber;
         private System.Windows.Forms.DataGridViewTextBoxColumn gender;
         private System.Windows.Forms.DataGridViewTextBoxColumn age;
         private System.Windows.Forms.DataGridViewTextBoxColumn score;
         private System.Windows.Forms.DataGridViewTextBoxColumn evaluation;
-        private System.Windows.Forms.Button refreshCommentBtn;
-        private System.Windows.Forms.DataGridView commentsDgView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn content;
-        private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;
     }
 }

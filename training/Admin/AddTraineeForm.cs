@@ -23,6 +23,7 @@ namespace training.Admin
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
+            //关闭当前窗口
             this.Dispose();
         }
         

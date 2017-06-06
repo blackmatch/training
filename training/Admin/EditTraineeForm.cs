@@ -49,6 +49,7 @@ namespace training.Admin
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //将用户输入的内容更新到数据库对应的记录中
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection con = new SqlConnection(conStr);
             con.Open();

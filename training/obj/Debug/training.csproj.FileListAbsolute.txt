@@ -54,7 +54,6 @@ D:\school\training\training\obj\Debug\training.EntryForm.resources
 D:\school\training\training\obj\Debug\training.instructor.InstructorForm.resources
 D:\school\training\training\obj\Debug\training.instructor.IstCourseDetailForm.resources
 D:\school\training\training\obj\Debug\training.instructor.ScoreTraineeForm.resources
-D:\school\training\training\obj\Debug\training.LoginForms.AdminLoginForm.resources
 D:\school\training\training\obj\Debug\training.Properties.Resources.resources
 D:\school\training\training\obj\Debug\training.trainee.AddCourseCommentForm.resources
 D:\school\training\training\obj\Debug\training.trainee.TraineeCourseDetailForm.resources

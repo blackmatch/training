@@ -52,6 +52,7 @@
             this.label1.Size = new System.Drawing.Size(65, 12);
             this.label1.TabIndex = 0;
             this.label1.Text = "课程名称：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -95,10 +96,11 @@
             this.nameTB.Name = "nameTB";
             this.nameTB.Size = new System.Drawing.Size(292, 21);
             this.nameTB.TabIndex = 5;
+            this.nameTB.TextChanged += new System.EventHandler(this.nameTB_TextChanged);
             // 
             // beginDatePicker
             // 
-            this.beginDatePicker.CustomFormat = "yyyy-MM-dd";
+            this.beginDatePicker.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.beginDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.beginDatePicker.Location = new System.Drawing.Point(136, 58);
             this.beginDatePicker.Name = "beginDatePicker";
@@ -107,7 +109,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.CustomFormat = "yyyy-MM-dd";
+            this.endDatePicker.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endDatePicker.Location = new System.Drawing.Point(136, 95);
             this.endDatePicker.Name = "endDatePicker";

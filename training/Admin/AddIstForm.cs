@@ -25,14 +25,16 @@ namespace training.Admin
             this.Dispose();
         }
 
-        private void okBtn_Click(object sender, EventArgs e)
+        private void okBtn_Click(object sender, EventArgs e) //点击按钮所调用的方法
         {
+            //获取输入的内容
             string name = nameTB.Text;
             string ageStr = ageTB.Text;
             string istNum = istNumTB.Text;
-
-            if (name.Length > 0 && ageStr.Length > 0 && istNum.Length > 0 && genderComBo.SelectedItem != null)
+             //判断添加教员的基本信息是否为空
+            if (name.Length > 0 && ageStr.Length > 0 && istNum.Length > 0 && genderComBo.SelectedItem != null) 
             {
+                //链接数据库插入一个新教员
                 string gender = genderComBo.SelectedItem.ToString();
                 string sql = "insert into instructors(name,istNumber,gender,age) values('" + name
                     + "','" + istNum + "','" + gender + "'," + ageStr + ")";
@@ -44,7 +46,7 @@ namespace training.Admin
                 {
                     sqlCon.Open();
                     sqlCmd.ExecuteNonQuery();
-                    MessageBox.Show("新增学员成功");
+                    MessageBox.Show("新增教员成功");
                     sqlCon.Close();
                     this.Dispose();
                 }

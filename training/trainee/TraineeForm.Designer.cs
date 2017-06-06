@@ -30,6 +30,7 @@
         {
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.addCommentBtn = new System.Windows.Forms.Button();
             this.refreshCourseBtn = new System.Windows.Forms.Button();
             this.courseDetailBtn = new System.Windows.Forms.Button();
             this.courseDgView = new System.Windows.Forms.DataGridView();
@@ -69,6 +70,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.SkyBlue;
+            this.tabPage1.Controls.Add(this.addCommentBtn);
             this.tabPage1.Controls.Add(this.refreshCourseBtn);
             this.tabPage1.Controls.Add(this.courseDetailBtn);
             this.tabPage1.Controls.Add(this.courseDgView);
@@ -79,6 +81,16 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "我的课程";
             // 
+            // addCommentBtn
+            // 
+            this.addCommentBtn.Location = new System.Drawing.Point(211, 26);
+            this.addCommentBtn.Name = "addCommentBtn";
+            this.addCommentBtn.Size = new System.Drawing.Size(75, 23);
+            this.addCommentBtn.TabIndex = 4;
+            this.addCommentBtn.Text = "添加评论";
+            this.addCommentBtn.UseVisualStyleBackColor = true;
+            this.addCommentBtn.Click += new System.EventHandler(this.addCommentBtn_Click);
+            // 
             // refreshCourseBtn
             // 
             this.refreshCourseBtn.Location = new System.Drawing.Point(110, 26);
@@ -87,6 +99,7 @@
             this.refreshCourseBtn.TabIndex = 3;
             this.refreshCourseBtn.Text = "刷新";
             this.refreshCourseBtn.UseVisualStyleBackColor = true;
+            this.refreshCourseBtn.Click += new System.EventHandler(this.refreshCourseBtn_Click);
             // 
             // courseDetailBtn
             // 
@@ -152,10 +165,12 @@
             // 
             // remark
             // 
+            this.remark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.remark.DataPropertyName = "remark";
             this.remark.HeaderText = "备注";
             this.remark.Name = "remark";
             this.remark.ReadOnly = true;
+            this.remark.Width = 54;
             // 
             // tabPage2
             // 
@@ -311,5 +326,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn endDate;
         private System.Windows.Forms.DataGridViewTextBoxColumn addr;
         private System.Windows.Forms.DataGridViewTextBoxColumn remark;
+        private System.Windows.Forms.Button addCommentBtn;
     }
 }

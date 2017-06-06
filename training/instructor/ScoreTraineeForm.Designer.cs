@@ -146,7 +146,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "ScoreTraineeForm";
-            this.Text = "为学员打分";
+            this.Text = " ";
             this.ResumeLayout(false);
             this.PerformLayout();
 

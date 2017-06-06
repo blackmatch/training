@@ -56,6 +56,7 @@ namespace training.instructor
 
         private void evaluateBtn_Click(object sender, EventArgs e)
         {
+            //根据选中的学员信息弹出打分窗口，有选中的学员则打开打分窗口
             if (traineeInfoDgView.DataSource == null || (traineeInfoDgView.DataSource as DataTable).Rows.Count == 0)
             {
                 MessageBox.Show("请选择学员");
@@ -72,7 +73,7 @@ namespace training.instructor
 
         private void traineeRefreshBtn_Click(object sender, EventArgs e)
         {
-            refreshTraineeInfo();
+            refreshTraineeInfo();//刷新数据
         }
 
         private void refreshCommentBtn_Click(object sender, EventArgs e)

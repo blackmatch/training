@@ -23,18 +23,21 @@ namespace training.Admin
             commentDgView.AutoGenerateColumns = false;
         }
 
+
         //学员管理-新增
-        private void addBtn_Click(object sender, EventArgs e)
+        private void addBtn_Click(object sender, EventArgs e) //点击新增按钮调用的方法
         {
+            //弹出新增学员界面，
             AddTraineeForm addForm = new AddTraineeForm();
             addForm.ShowDialog();
-            refreshTraineeData();
+            refreshTraineeData(); //新增完成后刷新学员数据
         }
 
 
         // 刷新学员列表数据
         private void refreshTraineeData()
         {
+            //从数据库中获取学员列表数据
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
@@ -120,9 +123,11 @@ namespace training.Admin
             refreshCourseData();
         }
 
+
         // 学员管理-修改信息
-        private void editTraineeInfoBtn_Click(object sender, EventArgs e)
+        private void editTraineeInfoBtn_Click(object sender, EventArgs e) 
         {
+            //拿到当前选中的学员信息，弹出修改的学员界面
             int idx = traineeDgView.CurrentRow.Index;
             string idStr = traineeDgView.Rows[idx].Cells["id"].Value.ToString();
             Trainee traineeInfo = new Trainee();
@@ -138,9 +143,11 @@ namespace training.Admin
             refreshTraineeData();
         }
 
+
         // 学员管理 - 重置密码
         private void resetTraineePwd_Click(object sender, EventArgs e)
         {
+            //弹出对话框提示是否重置密码
             int idx = traineeDgView.CurrentRow.Index;
             string idStr = traineeDgView.Rows[idx].Cells["id"].Value.ToString();
             string name = traineeDgView.Rows[idx].Cells["姓名"].Value.ToString();
@@ -156,14 +163,14 @@ namespace training.Admin
                 SqlCommand sqlCmd = new SqlCommand(sql, con);
                 try
                 {
-                    int rows = sqlCmd.ExecuteNonQuery();
+                    int rows = sqlCmd.ExecuteNonQuery(); //把新密码更新到数据库·
                     if (rows > 0)
                     {
                         MessageBox.Show("重置密码成功！");
                     }
                     else
                     {
-                        MessageBox.Show("重置密码成功！");
+                        MessageBox.Show("重置密码失败！");
                     }
 
                     con.Close();
@@ -177,17 +184,18 @@ namespace training.Admin
             }
         }
 
+
         // 学员管理 - 删除
         private void deleteTraineeBtn_Click(object sender, EventArgs e)
         {
-            //删除学员
+            //弹出对话框提示是否删除学员
             int idx = traineeDgView.CurrentRow.Index;
             string idStr = traineeDgView.Rows[idx].Cells["id"].Value.ToString();
             string name = traineeDgView.Rows[idx].Cells["姓名"].Value.ToString();
             DialogResult dr = MessageBox.Show("确认删除" + name + "的信息吗？", "提示", MessageBoxButtons.OKCancel);
             if (dr == DialogResult.OK)
             {
-                //删除学员
+                //从数据库中删除学员
                 string conStr = "server=localhost;database=training;integrated security=SSPI";
                 SqlConnection con = new SqlConnection(conStr);
                 con.Open();
@@ -221,7 +229,7 @@ namespace training.Admin
         // 学员管理-刷新
         private void refreshTraineeBtn_Click(object sender, EventArgs e)
         {
-            // 刷新学员数据
+            // 刷新学员数据的方法
             refreshTraineeData();
         }
 

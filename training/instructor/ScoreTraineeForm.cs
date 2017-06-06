@@ -32,7 +32,7 @@ namespace training.instructor
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Dispose();//关闭当前窗口
         }
 
         private void okBtn_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace training.instructor
             int rows = ds.Tables["score"].Rows.Count;
             if (rows > 0)
             {
-                // 已存在打分记录，更新
+                // 若存在打分记录，则更新数据库中的信息
                 sql = "update score set score=" + scoreTextBox.Text + ",evaluation='"
                     + evaluationRichTextBox.Text + "' where course_id=" + this.courseId
                     + " and trainee_id=" + this.traineeId;
@@ -79,7 +79,7 @@ namespace training.instructor
             }
             else
             {
-                // 还未存在打分记录，插入
+                // 还未存在打分记录，则插入数据库中
                 sql = "insert into score(course_id,trainee_id,score,evaluation) values(" + this.courseId
                    + "," + this.traineeId + "," + scoreTextBox.Text + ",'" + evaluationRichTextBox.Text + "')";
                 SqlCommand sqlCmd = new SqlCommand(sql, con);

@@ -99,7 +99,7 @@
             // 
             // endDatePicker
             // 
-            this.endDatePicker.CustomFormat = "yyyy-MM-dd";
+            this.endDatePicker.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.endDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.endDatePicker.Location = new System.Drawing.Point(135, 77);
             this.endDatePicker.Name = "endDatePicker";
@@ -108,7 +108,7 @@
             // 
             // beginDatePicker
             // 
-            this.beginDatePicker.CustomFormat = "yyyy-MM-dd";
+            this.beginDatePicker.CustomFormat = "yyyy-MM-dd HH:mm:ss";
             this.beginDatePicker.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.beginDatePicker.Location = new System.Drawing.Point(135, 40);
             this.beginDatePicker.Name = "beginDatePicker";

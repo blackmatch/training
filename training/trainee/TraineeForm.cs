@@ -29,6 +29,7 @@ namespace training.trainee
         {
             InitializeComponent();
             this.traineeInfo = trainee;
+            this.Text = "欢迎您，" + this.traineeInfo.name;
             updateTraineeInfo();
             refreshCourseData();
         }
@@ -70,24 +71,42 @@ namespace training.trainee
 
         private void editInfoBtn_Click(object sender, EventArgs e)
         {
+            //弹出修改学员窗口，
             EditTraineeForm editFm = new EditTraineeForm(this.traineeInfo);
             editFm.ShowDialog();
-            updateTraineeInfo();
+            updateTraineeInfo(); //更新学员信息
         }
 
         private void updatePwdBtn_Click(object sender, EventArgs e)
         {
+            //弹出修改密码窗口
             UpdatePwdForm updateFm = new UpdatePwdForm("trainee", this.traineeInfo.id);
             updateFm.ShowDialog();
         }
 
         private void courseDetailBtn_Click(object sender, EventArgs e)
         {
+            //先获取选中课程的id，弹出课程详情窗口
             int idx = courseDgView.CurrentRow.Index;
             string cId = this.myCourses.Tables["enrollment"].Rows[idx]["id"].ToString();
             string cName = this.myCourses.Tables["enrollment"].Rows[idx]["name"].ToString();
             TraineeCourseDetailForm detailFm = new TraineeCourseDetailForm(this.traineeInfo.id, cId, cName);
             detailFm.ShowDialog();
+        }
+
+        private void addCommentBtn_Click(object sender, EventArgs e)
+        {
+            //弹出评论窗口，更新课程信息
+            int idx = courseDgView.CurrentRow.Index;
+            string cId = this.myCourses.Tables["enrollment"].Rows[idx]["id"].ToString();
+            AddCourseCommentForm commentFm = new AddCourseCommentForm(this.traineeInfo.id, cId);
+            commentFm.ShowDialog();
+            refreshCourseData();
+        }
+
+        private void refreshCourseBtn_Click(object sender, EventArgs e)
+        {
+            refreshCourseData(); //更新课程信息
         }
     }
 }

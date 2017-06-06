@@ -73,17 +73,24 @@ namespace training.Admin
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //获取用户输入的内容
             string name = nameTB.Text;
             string beginDate = beginDatePicker.Text;
             string endDate = endDatePicker.Text;
             string address = addrTB.Text;
             string remark = remarkRichTB.Text;
             int idx = istComBo.SelectedIndex;
+            if (idx == -1)
+            {
+                MessageBox.Show("请选择教员！");
+                return;
+            }
             string idStr = this.ists.Tables["instructors"].Rows[idx]["id"].ToString();
 
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
+            //更新数据库的内容
             string sql = "update courses set name='" + name + "',beginDate='" + beginDate + "',endDate='"
                 + endDate + "',addr='" + address + "',remark='" + remark + "' where id=" + courseId;
             SqlCommand sqlCmd = new SqlCommand(sql, con);

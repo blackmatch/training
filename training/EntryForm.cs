@@ -24,10 +24,10 @@ namespace training
         {
             InitializeComponent();
         }
-
+        //点击登陆按钮执行的操作
         private void loginBtn_Click(object sender, EventArgs e)
         {
-            int idx = loginTabControl.SelectedIndex;
+            int idx = loginTabControl.SelectedIndex; //判断当前入口的身份，idx=0，管理员入口，1为教员，2为学员
             switch (idx)
             {
                 case 0:
@@ -50,18 +50,22 @@ namespace training
         /// </summary>
         private void adminLogin()
         {
+            // 判断用户名和密码是否有输入
             if (adminUserNameTextBox.Text.Trim().Length > 0 && adminPwdTextBox.Text.Trim().Length > 0)
             {
+                //获取输入的用户名和密码
                 string username = adminUserNameTextBox.Text.Trim();
                 string pwd = Tool.getMd5Str(adminPwdTextBox.Text.Trim());
-
+                //链接并打开数据库
                 string conStr = "server=localhost;database=training;integrated security=SSPI";
                 SqlConnection con = new SqlConnection(conStr);
                 con.Open();
+                //根据输入的用户名和密码来查询数据库中是否有相应的数据
                 string sql = "select * from admins where userName='" + username + "' and pwd='" + pwd + "'";
                 SqlDataAdapter adapter = new SqlDataAdapter(sql, con);
                 DataSet ds = new DataSet();
                 adapter.Fill(ds, "admins");
+                //查看数据库中是否有匹配的数据
                 int rows = ds.Tables["admins"].Rows.Count;
                 //userNameTb.Text = ds.Tables["admins"].Rows[0]["userName"].ToString();
                 if (rows > 0)

@@ -76,6 +76,7 @@ namespace training.Admin
         // 添加学员
         private void addTraineeBtn_Click(object sender, EventArgs e)
         {
+            //弹出添加学员的界面
             CourseAddTraineeForm addTraineeFm = new CourseAddTraineeForm(this.courseId);
             addTraineeFm.ShowDialog();
             refreshCourseTraineeInfo();

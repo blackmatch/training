@@ -78,7 +78,7 @@
             this.courseTab.Location = new System.Drawing.Point(12, 31);
             this.courseTab.Name = "courseTab";
             this.courseTab.SelectedIndex = 0;
-            this.courseTab.Size = new System.Drawing.Size(736, 301);
+            this.courseTab.Size = new System.Drawing.Size(561, 301);
             this.courseTab.TabIndex = 0;
             this.courseTab.Tag = "";
             // 
@@ -93,7 +93,7 @@
             this.traineeContainer.Location = new System.Drawing.Point(4, 22);
             this.traineeContainer.Name = "traineeContainer";
             this.traineeContainer.Padding = new System.Windows.Forms.Padding(3);
-            this.traineeContainer.Size = new System.Drawing.Size(728, 294);
+            this.traineeContainer.Size = new System.Drawing.Size(553, 275);
             this.traineeContainer.TabIndex = 0;
             this.traineeContainer.Text = "学员管理";
             this.traineeContainer.UseVisualStyleBackColor = true;
@@ -159,7 +159,7 @@
             this.traineeDgView.Name = "traineeDgView";
             this.traineeDgView.ReadOnly = true;
             this.traineeDgView.RowTemplate.Height = 23;
-            this.traineeDgView.Size = new System.Drawing.Size(716, 222);
+            this.traineeDgView.Size = new System.Drawing.Size(523, 203);
             this.traineeDgView.TabIndex = 0;
             // 
             // istContainer
@@ -173,7 +173,7 @@
             this.istContainer.Location = new System.Drawing.Point(4, 22);
             this.istContainer.Name = "istContainer";
             this.istContainer.Padding = new System.Windows.Forms.Padding(3);
-            this.istContainer.Size = new System.Drawing.Size(728, 275);
+            this.istContainer.Size = new System.Drawing.Size(553, 275);
             this.istContainer.TabIndex = 1;
             this.istContainer.Text = "教员管理";
             this.istContainer.UseVisualStyleBackColor = true;
@@ -239,7 +239,7 @@
             this.istDgView.MultiSelect = false;
             this.istDgView.Name = "istDgView";
             this.istDgView.RowTemplate.Height = 23;
-            this.istDgView.Size = new System.Drawing.Size(716, 214);
+            this.istDgView.Size = new System.Drawing.Size(541, 195);
             this.istDgView.TabIndex = 0;
             // 
             // courseContainer
@@ -253,7 +253,7 @@
             this.courseContainer.Location = new System.Drawing.Point(4, 22);
             this.courseContainer.Name = "courseContainer";
             this.courseContainer.Padding = new System.Windows.Forms.Padding(3);
-            this.courseContainer.Size = new System.Drawing.Size(728, 294);
+            this.courseContainer.Size = new System.Drawing.Size(553, 275);
             this.courseContainer.TabIndex = 2;
             this.courseContainer.Text = "课程管理";
             this.courseContainer.UseVisualStyleBackColor = true;
@@ -318,7 +318,7 @@
             this.courseDgView.MultiSelect = false;
             this.courseDgView.Name = "courseDgView";
             this.courseDgView.RowTemplate.Height = 23;
-            this.courseDgView.Size = new System.Drawing.Size(716, 215);
+            this.courseDgView.Size = new System.Drawing.Size(541, 196);
             this.courseDgView.TabIndex = 0;
             // 
             // commentPage
@@ -330,7 +330,7 @@
             this.commentPage.Location = new System.Drawing.Point(4, 22);
             this.commentPage.Name = "commentPage";
             this.commentPage.Padding = new System.Windows.Forms.Padding(3);
-            this.commentPage.Size = new System.Drawing.Size(728, 270);
+            this.commentPage.Size = new System.Drawing.Size(553, 275);
             this.commentPage.TabIndex = 3;
             this.commentPage.Text = "评论管理";
             this.commentPage.UseVisualStyleBackColor = true;
@@ -369,7 +369,7 @@
             this.commentDgView.MultiSelect = false;
             this.commentDgView.Name = "commentDgView";
             this.commentDgView.RowTemplate.Height = 23;
-            this.commentDgView.Size = new System.Drawing.Size(716, 215);
+            this.commentDgView.Size = new System.Drawing.Size(541, 196);
             this.commentDgView.TabIndex = 1;
             // 
             // id

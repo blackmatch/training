@@ -71,16 +71,9 @@ namespace training.trainee
             con.Close();
         }
 
-        private void addCommentBtn_Click(object sender, EventArgs e)
-        {
-            AddCourseCommentForm commentFm = new AddCourseCommentForm(this.traineeId, this.courseId);
-            commentFm.ShowDialog();
-            refreshCommentsData();
-        }
-
         private void refreshCommentsBtn_Click(object sender, EventArgs e)
         {
-            refreshCommentsData();
+            refreshCommentsData();//刷新评论数据
         }
     }
 }

@@ -31,11 +31,12 @@ namespace training.trainee
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
-            this.Dispose();
+            this.Dispose();//关闭当前窗口
         }
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //将评论的内容插入到数据库中
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection sqlCon = new SqlConnection(conStr);
             string sql = "insert into comments(course_id,trainee_id,content) values("

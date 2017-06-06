@@ -19,8 +19,9 @@ namespace training.Admin
         public AddCourseForm()
         {
             InitializeComponent();
-            DataSet ists = getAllIsts();
+            DataSet ists = getAllIsts(); //获取所有的教员
             this.ists = ists;
+            //设置教员选项下拉时的数据
             for (int i = 0; i < ists.Tables["instructors"].Rows.Count; i++ )
             {
                 istComBo.Items.Add(ists.Tables["instructors"].Rows[i]["姓名"] + " （" + ists.Tables["instructors"].Rows[i]["教员编号"] + "）");
@@ -29,6 +30,7 @@ namespace training.Admin
 
         private void cancelBtn_Click(object sender, EventArgs e)
         {
+            //关闭当前的窗口
             this.Dispose();
         }
 
@@ -53,15 +55,23 @@ namespace training.Admin
             }
         }
 
+        //点击确定按钮执行的方法
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //获取输入的数据
             string name = nameTB.Text;
             string beginDate = beginDatePicker.Text;
             string endDate = endDatePicker.Text;
             string address = addrTB.Text;
             string remark = remarkRichTB.Text;
             int idx = istComBo.SelectedIndex;
+            if (idx == -1)
+            {
+                MessageBox.Show("请选择教员！");
+                return;
+            }
             string idStr = this.ists.Tables["instructors"].Rows[idx]["id"].ToString();
+            //把课程的信息写入数据库
             if (name.Length > 0)
             {
                 //插入数据
@@ -70,7 +80,7 @@ namespace training.Admin
                 string conStr = "server=localhost;database=training;integrated security=SSPI";
                 SqlConnection sqlCon = new SqlConnection(conStr);
                 SqlCommand sqlCmd = new SqlCommand(sql, sqlCon);
-
+                // 打开数据库添加课程
                 try
                 {
                     sqlCon.Open();
@@ -82,14 +92,24 @@ namespace training.Admin
                 catch (Exception ex)
                 {
                     sqlCon.Close();
-                    MessageBox.Show("新增课程失败！" + sql);
+                    MessageBox.Show("新增课程失败！");
                     Console.WriteLine("{0} Exception caught.", ex);
                 }
             }
             else
             {
-                MessageBox.Show("请填写完整的学员信息");
+                MessageBox.Show("请输入课程名称");
             }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void nameTB_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

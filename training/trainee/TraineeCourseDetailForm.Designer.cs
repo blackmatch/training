@@ -37,7 +37,6 @@
             this.commentsDgView = new System.Windows.Forms.DataGridView();
             this.content = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.createdAt = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addCommentBtn = new System.Windows.Forms.Button();
             this.refreshCommentsBtn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.commentsDgView)).BeginInit();
             this.SuspendLayout();
@@ -107,7 +106,7 @@
             this.commentsDgView.Location = new System.Drawing.Point(33, 164);
             this.commentsDgView.Name = "commentsDgView";
             this.commentsDgView.RowTemplate.Height = 23;
-            this.commentsDgView.Size = new System.Drawing.Size(674, 206);
+            this.commentsDgView.Size = new System.Drawing.Size(532, 175);
             this.commentsDgView.TabIndex = 6;
             // 
             // content
@@ -126,19 +125,9 @@
             this.createdAt.Name = "createdAt";
             this.createdAt.ReadOnly = true;
             // 
-            // addCommentBtn
-            // 
-            this.addCommentBtn.Location = new System.Drawing.Point(33, 135);
-            this.addCommentBtn.Name = "addCommentBtn";
-            this.addCommentBtn.Size = new System.Drawing.Size(75, 23);
-            this.addCommentBtn.TabIndex = 7;
-            this.addCommentBtn.Text = "添加评论";
-            this.addCommentBtn.UseVisualStyleBackColor = true;
-            this.addCommentBtn.Click += new System.EventHandler(this.addCommentBtn_Click);
-            // 
             // refreshCommentsBtn
             // 
-            this.refreshCommentsBtn.Location = new System.Drawing.Point(143, 135);
+            this.refreshCommentsBtn.Location = new System.Drawing.Point(33, 135);
             this.refreshCommentsBtn.Name = "refreshCommentsBtn";
             this.refreshCommentsBtn.Size = new System.Drawing.Size(75, 23);
             this.refreshCommentsBtn.TabIndex = 8;
@@ -153,7 +142,6 @@
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(577, 351);
             this.Controls.Add(this.refreshCommentsBtn);
-            this.Controls.Add(this.addCommentBtn);
             this.Controls.Add(this.commentsDgView);
             this.Controls.Add(this.evaluationLabel);
             this.Controls.Add(this.label3);
@@ -178,7 +166,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label evaluationLabel;
         private System.Windows.Forms.DataGridView commentsDgView;
-        private System.Windows.Forms.Button addCommentBtn;
         private System.Windows.Forms.Button refreshCommentsBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn content;
         private System.Windows.Forms.DataGridViewTextBoxColumn createdAt;

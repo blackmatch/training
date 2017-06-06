@@ -47,12 +47,14 @@ namespace training.Admin
 
         private void okBtn_Click(object sender, EventArgs e)
         {
+            //将用户输入的内容更新到数据库对应记录中
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
             string sql = "update instructors set name='" + nameTB.Text +
                 "',gender='" + genderComBo.SelectedItem.ToString() +
                 "',age=" + ageTB.Text + " where id=" + this.userId;
+            Console.WriteLine(sql);
             SqlCommand sqlCmd = new SqlCommand(sql, con);
             try
             {

@@ -63,7 +63,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(646, 324);
+            this.tabControl1.Size = new System.Drawing.Size(613, 324);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -75,7 +75,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(638, 298);
+            this.tabPage1.Size = new System.Drawing.Size(605, 298);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "课程管理";
             // 
@@ -87,6 +87,7 @@
             this.refreshCourseBtn.TabIndex = 2;
             this.refreshCourseBtn.Text = "刷新";
             this.refreshCourseBtn.UseVisualStyleBackColor = true;
+            this.refreshCourseBtn.Click += new System.EventHandler(this.refreshCourseBtn_Click);
             // 
             // courseDetailBtn
             // 
@@ -113,7 +114,7 @@
             this.courseDgView.MultiSelect = false;
             this.courseDgView.Name = "courseDgView";
             this.courseDgView.RowTemplate.Height = 23;
-            this.courseDgView.Size = new System.Drawing.Size(626, 206);
+            this.courseDgView.Size = new System.Drawing.Size(614, 206);
             this.courseDgView.TabIndex = 0;
             // 
             // id
@@ -153,10 +154,12 @@
             // 
             // remark
             // 
+            this.remark.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.remark.DataPropertyName = "remark";
             this.remark.HeaderText = "备注";
             this.remark.Name = "remark";
             this.remark.ReadOnly = true;
+            this.remark.Width = 54;
             // 
             // tabPage2
             // 
@@ -174,7 +177,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(638, 298);
+            this.tabPage2.Size = new System.Drawing.Size(605, 298);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "我的信息";
             // 
@@ -186,6 +189,7 @@
             this.updatePwdBtn.TabIndex = 9;
             this.updatePwdBtn.Text = "修改密码";
             this.updatePwdBtn.UseVisualStyleBackColor = true;
+            this.updatePwdBtn.Click += new System.EventHandler(this.updatePwdBtn_Click);
             // 
             // editInfoBtn
             // 
@@ -195,6 +199,7 @@
             this.editInfoBtn.TabIndex = 8;
             this.editInfoBtn.Text = "修改信息";
             this.editInfoBtn.UseVisualStyleBackColor = true;
+            this.editInfoBtn.Click += new System.EventHandler(this.editInfoBtn_Click);
             // 
             // ageLabel
             // 

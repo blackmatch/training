@@ -51,11 +51,13 @@ namespace training.Admin
 
         private void okBtn_Click(object sender, EventArgs e)
         {
-            int idx = traineeDgView.CurrentRow.Index;
+            //获取要添加学员的id
+            int idx = traineeDgView.CurrentRow.Index; 
             string idStr = this.traineeDataSet.Tables["trainees"].Rows[idx]["id"].ToString();
             string conStr = "server=localhost;database=training;integrated security=SSPI";
             SqlConnection con = new SqlConnection(conStr);
             con.Open();
+            //根据学员和课程id拼接sql语句，来插入到数据库中
             string sql = "insert into enrollment(course_id,trainee_id) values(" + this.courseId 
                 + "," + idStr + ")";
             SqlCommand sqlCmd = new SqlCommand(sql, con);
